@@ -2,6 +2,9 @@ name: Import Strivea Vet prototype
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/import-strivea-vet.yml"
 
 permissions:
   contents: write
