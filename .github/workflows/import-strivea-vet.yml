@@ -1,0 +1,85 @@
+name: Import Strivea Vet prototype
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Import published Strivea Vet files
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://strivea-vet-aaron.aaron-mimoun260.chatgpt.site"
+          TARGET="outputs/numa-sante"
+          mkdir -p "$TARGET/assets"
+
+          curl -fsSL "$BASE/" -o "$TARGET/index.html"
+          curl -fsSL "$BASE/styles.css" -o "$TARGET/styles.css"
+          curl -fsSL "$BASE/app.js" -o "$TARGET/app.js"
+          curl -fsSL "$BASE/portable.html" -o "$TARGET/portable.html"
+          curl -fsSL "$BASE/protocol-editor.js" -o "$TARGET/protocol-editor.js"
+          curl -fsSL "$BASE/interior-settings.js" -o "$TARGET/interior-settings.js"
+          curl -fsSL "$BASE/document-library.js" -o "$TARGET/document-library.js"
+
+          curl -fsSL "$BASE/assets/assistant-avatar-professional.png" -o "$TARGET/assets/assistant-avatar-professional.png"
+          curl -fsSL "$BASE/assets/numa-avatar-professional.png" -o "$TARGET/assets/numa-avatar-professional.png"
+          curl -fsSL "$BASE/assets/numa-avatar-v2.png" -o "$TARGET/assets/numa-avatar-v2.png"
+          curl -fsSL "$BASE/assets/numa-avatar.png" -o "$TARGET/assets/numa-avatar.png"
+          curl -fsSL "$BASE/assets/strivea-logo.png" -o "$TARGET/assets/strivea-logo.png"
+
+      - name: Add project documentation
+        shell: bash
+        run: |
+          cat > START_HERE_CLAUDE.md <<'EOF'
+          # START HERE — Strivea Vet
+
+          Projet Strivea Vet importé depuis le prototype public.
+
+          Le code principal est dans :
+
+          ```text
+          outputs/numa-sante/
+          ```
+
+          Fichiers principaux :
+
+          - `outputs/numa-sante/index.html`
+          - `outputs/numa-sante/styles.css`
+          - `outputs/numa-sante/app.js`
+          - `outputs/numa-sante/portable.html`
+          - `outputs/numa-sante/protocol-editor.js`
+          - `outputs/numa-sante/interior-settings.js`
+          - `outputs/numa-sante/document-library.js`
+          - `outputs/numa-sante/assets/`
+
+          Pour tester localement :
+
+          ```bash
+          python -m http.server 4173
+          ```
+
+          Puis ouvrir :
+
+          ```text
+          http://localhost:4173/outputs/numa-sante/index.html#today
+          ```
+
+          Important : Numa ne doit jamais être présentée comme un vétérinaire IA. Elle aide au suivi, suit les protocoles validés par la clinique et remonte les signaux utiles à l’équipe.
+          EOF
+
+      - name: Commit imported project files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs START_HERE_CLAUDE.md
+          git commit -m "Import Strivea Vet prototype files" || exit 0
+          git push
