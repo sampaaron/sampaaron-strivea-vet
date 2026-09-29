@@ -1,0 +1,1372 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F6F5F0" />
+    <meta name="description" content="Strivea Vet — le suivi post-visite et post-opératoire par WhatsApp pour cliniques vétérinaires." />
+    <title>Strivea Vet — suivi vétérinaire</title>
+    <link rel="stylesheet" href="styles.css?v=20260917-trust-blue" />
+  </head>
+  <body data-route="vitrine">
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+    <section class="landing" id="view-vitrine" aria-labelledby="landing-title">
+      <header class="landing-nav page-width">
+        <a class="brand brand-light" href="#vitrine" data-route="vitrine" aria-label="Strivea Vet, accueil">
+          <img src="assets/strivea-logo.png" alt="" />
+          <span>strivea vet</span>
+        </a>
+        <nav class="landing-links" aria-label="Navigation vitrine">
+          <a href="#fonctionnement" data-landing-section="fonctionnement">Comment ça marche</a>
+          <a href="#tarifs" data-landing-section="tarifs">Tarifs</a>
+          <a href="#integrations" data-landing-section="integrations">Intégrations</a>
+          <a href="#securite" data-landing-section="securite">Sécurité</a>
+          <a href="#confiance" data-landing-section="confiance">Notre cadre</a>
+          <button class="button button-small button-cream" type="button" data-route="login">Voir une démo clinique <span aria-hidden="true">↗</span></button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero page-width">
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow-light">Le suivi qui continue après la visite vétérinaire</p>
+            <h1 id="landing-title">Les propriétaires rassurés.<br /><em>Votre clinique alertée au bon moment.</em></h1>
+            <p class="hero-lead">Strivea Vet prolonge votre suivi après la visite avec des protocoles validés, des messages WhatsApp et des alertes qui reviennent toujours à votre équipe.</p>
+            <div class="hero-actions">
+              <button class="button button-cream" type="button" data-route="login">Demander un pilote clinique <span aria-hidden="true">→</span></button>
+              <a class="text-link text-link-light" href="#fonctionnement" data-landing-section="fonctionnement">Voir le parcours <span aria-hidden="true">↓</span></a>
+            </div>
+            <p class="mini-note mini-note-light">Le suivi post-visite qui détecte les écarts, protège votre équipe et rassure les propriétaires.</p>
+            <div class="hero-proof-row" aria-label="Points clés Strivea Vet">
+              <span><strong>WhatsApp</strong><small>le propriétaire reste dans son usage naturel</small></span>
+              <span><strong>Suivi post-visite</strong><small>la visite devient un plan clair</small></span>
+              <span><strong>Numa</strong><small>applique vos protocoles, sans diagnostic</small></span>
+              <span><strong>RDV & avis</strong><small>redirigés au bon moment</small></span>
+            </div>
+          </div>
+          <div class="phone-stage" aria-label="Aperçu fictif d'une conversation de suivi sur WhatsApp">
+            <div class="leaf-disc"></div>
+            <div class="phone-shell">
+            <div class="phone">
+              <div class="phone-top">
+                <span class="phone-notch"></span>
+                <div class="phone-contact">
+                  <img src="assets/numa-avatar-professional.png" alt="" />
+                  <span><strong>Numa · IA de la clinique</strong><small>en ligne</small></span>
+                </div>
+                <span aria-hidden="true">⋮</span>
+              </div>
+              <div class="phone-thread">
+                <p class="phone-date">Aujourd’hui</p>
+                <div class="bubble bubble-out">Bonjour Claire, comment va Nala depuis son retour à la maison ?</div>
+                <div class="bubble bubble-in">Elle dort beaucoup et je voulais vérifier pour la collerette.</div>
+                <div class="bubble bubble-out">Je transmets votre question à la clinique si besoin. Je peux aussi vous rappeler les consignes validées par le vétérinaire.</div>
+                <div class="phone-link-card">
+                  <span class="link-icon" aria-hidden="true">↗</span>
+                  <div><strong>Votre espace Strivea Vet</strong><small>Le point de suivi sécurisé de la clinique</small></div>
+                </div>
+              </div>
+              <div class="phone-input">Écrire un message <span aria-hidden="true">➤</span></div>
+            </div>
+            </div>
+            <div class="phone-demo-peek" aria-hidden="true">
+              <img src="assets/numa-avatar-professional.png" alt="" />
+              <div><strong>Numa</strong><span>Je reste avec vous après la visite.</span><small>Message de démonstration</small></div>
+            </div>
+            <div class="numa-hero-presence" aria-hidden="true">
+              <img src="assets/numa-avatar-professional.png" alt="" />
+              <span><strong>Numa</strong><small>Assistant IA fictif · suivi propriétaire</small></span>
+            </div>
+            <div class="hero-caption">Une présence chaleureuse, contrôlée par la clinique.</div>
+          </div>
+        </section>
+
+        <section class="promise page-width">
+          <p class="eyebrow">Simple par design</p>
+          <div class="promise-grid">
+            <h2>La clinique garde la main.<br />Les suivis simples avancent seuls.</h2>
+            <p>Strivea Vet n’est ni un logiciel métier vétérinaire, ni un agenda, ni un vétérinaire IA. C’est une couche de continuité après visite : messages, rappels de soins, questionnaires, alertes et synthèses utiles, sans surcharger l’équipe.</p>
+          </div>
+        </section>
+
+        <section class="feature-band" id="fonctionnement" tabindex="-1">
+          <div class="page-width">
+            <p class="eyebrow eyebrow-light">Un parcours, trois gestes simples</p>
+            <div class="steps">
+              <article class="step">
+                <span class="step-number">01</span>
+                <h3>Visite ou intervention terminée</h3>
+                <p>En fin de visite, le vétérinaire active un protocole : post-stérilisation, chirurgie orthopédique, dentaire, vaccin ou suivi chronique.</p>
+              </article>
+              <article class="step">
+                <span class="step-number">02</span>
+                <h3>Numa accompagne le propriétaire</h3>
+                <p>Numa échange via WhatsApp, pose des questions simples et applique uniquement le cadre validé par la clinique.</p>
+              </article>
+              <article class="step">
+                <span class="step-number">03</span>
+                <h3>L’équipe voit l’exception</h3>
+                <p>Le dashboard remonte seulement les animaux à surveiller, les urgences probables, les synthèses et les liens de rendez-vous à valider.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="showcase page-width">
+          <div class="showcase-copy">
+            <p class="eyebrow">Pensé pour le quotidien réel</p>
+            <h2>Moins de dispersion.<br /><em>Plus d’attention utile.</em></h2>
+            <p>La page « Aujourd’hui » met les quelques animaux qui demandent vraiment votre regard au premier plan. Les rappels, les relances et les rendez-vous suivent naturellement.</p>
+            <button class="button button-forest" type="button" data-route="login">Voir une démo clinique <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="mini-dashboard" aria-label="Aperçu du tableau de bord">
+            <div class="mini-dashboard-head"><span>Aujourd’hui</span><span class="mini-avatar">E</span></div>
+            <div class="mini-stat-row"><span><b>4</b> réponses à lire</span><span><b>2</b> actions prévues</span></div>
+            <div class="mini-task"><span class="status-dot amber"></span><div><strong>Nala · Claire</strong><small>Question collerette après stérilisation</small></div><span>→</span></div>
+            <div class="mini-task"><span class="status-dot sage"></span><div><strong>Oslo · Karim</strong><small>Point J+7 reçu</small></div><span>→</span></div>
+            <div class="mini-task"><span class="status-dot blue"></span><div><strong>Suivi Signature</strong><small>Plan post-visite prêt à valider</small></div><span>→</span></div>
+          </div>
+        </section>
+
+        <section class="pricing page-width" id="tarifs" aria-labelledby="pricing-title" tabindex="-1">
+          <div class="pricing-heading">
+            <div>
+              <p class="eyebrow">Deux offres, aucun forfait flou</p>
+              <h2 id="pricing-title">Deux offres simples pour lancer le suivi post-visite.</h2>
+            </div>
+            <p>Une formule de démonstration courte pour tester Strivea Vet en conditions réelles, puis un abonnement unique pour le quotidien de la clinique.</p>
+          </div>
+
+          <div class="pricing-grid pricing-grid-two">
+            <article class="pricing-card pricing-card-founder pricing-card-demo">
+              <div class="pricing-card-head">
+                <span class="pricing-kicker">Offre de lancement</span>
+              <h3>Pilote accompagné</h3>
+              <p class="pricing-description">Pour tester Strivea Vet sur vos premiers suivis post-consultation avec quelques protocoles de départ et des critères de succès définis.</p>
+              </div>
+              <p class="price"><strong>86&nbsp;€</strong><span>HT / mois</span></p>
+              <p class="price-caption">Utilisable uniquement pendant 2 mois maximum par clinique.</p>
+              <ul class="pricing-features">
+                <li>Dashboard vétérinaire avec données de démonstration</li>
+                <li>Protocoles post-visite prêts à adapter</li>
+                <li>Simulation WhatsApp avec Numa côté propriétaire</li>
+                <li>Alertes, synthèses et avis Google en démonstration</li>
+              </ul>
+              <button class="button button-outline pricing-action" type="button" data-route="login">Demander le pilote <span aria-hidden="true">→</span></button>
+            </article>
+
+            <article class="pricing-card pricing-card-featured">
+              <div class="pricing-card-head">
+                <span class="pricing-kicker">Abonnement cabinet</span>
+                <h3>Cabinet</h3>
+                <p class="pricing-description">Pour les vétérinaires qui veulent automatiser le suivi après visite tout en gardant le contrôle clinique.</p>
+              </div>
+              <p class="price"><strong>109&nbsp;€</strong><span>HT / mois</span></p>
+              <p class="price-caption">L’offre principale pour une clinique vétérinaire.</p>
+              <ul class="pricing-features">
+                <li>Protocoles vétérinaires par motif de visite</li>
+                <li>Messages, QCM, documents et rappels envoyés au bon moment</li>
+                <li>Alertes qualifiées quand un écart au protocole doit être évalué par l’équipe</li>
+                <li>Synthèses propriétaire pour préparer l’appel ou la prochaine visite</li>
+                <li>Liens Doctolib et demande d’avis Google intégrés au parcours</li>
+              </ul>
+              <button class="button button-cream pricing-action" type="button" data-route="login">Demander un pilote clinique <span aria-hidden="true">→</span></button>
+            </article>
+          </div>
+
+          <aside class="pricing-note" aria-label="Transparence sur WhatsApp">
+            <span aria-hidden="true">↗</span>
+            <p><strong>Prix affichés hors taxes.</strong> Les frais WhatsApp éventuels restent transparents et séparés selon le volume réel de conversations. Strivea Vet ne remplace jamais le vétérinaire : Numa suit vos protocoles et remonte les situations à valider.</p>
+          </aside>
+        </section>
+
+        <section class="integration-band page-width" id="integrations" tabindex="-1" aria-labelledby="integrations-title">
+          <div class="pricing-heading">
+            <div>
+              <p class="eyebrow">Connecté à l’existant</p>
+              <h2 id="integrations-title">Strivea Vet ne remplace pas votre logiciel métier.</h2>
+            </div>
+            <p>La couche de continuité se branche autour de vos outils : logiciel clinique, agenda, WhatsApp Business, liens de rendez-vous et avis. La clinique garde ses habitudes.</p>
+          </div>
+          <div class="steps integration-steps">
+            <article class="step"><span class="step-number">Flux</span><h3>Visite clôturée</h3><p>Déclenchement après un événement confirmé : consultation terminée, intervention réalisée ou rendez-vous confirmé.</p></article>
+            <article class="step"><span class="step-number">Canal</span><h3>WhatsApp propriétaire</h3><p>Messages, QCM, documents et rappels pratiques sans application à télécharger côté propriétaire.</p></article>
+            <article class="step"><span class="step-number">Retour</span><h3>Alerte clinique</h3><p>Un écart au protocole crée une tâche humaine avec règle déclenchée, priorité et action attendue.</p></article>
+          </div>
+        </section>
+
+        <section class="security-band page-width" id="securite" tabindex="-1" aria-labelledby="security-title">
+          <div class="pricing-heading">
+            <div>
+              <p class="eyebrow">Sécurité & confiance</p>
+              <h2 id="security-title">La décision clinique reste toujours humaine.</h2>
+            </div>
+            <p>Consentement propriétaire, rôles, journalisation, historique des validations et limites explicites de l’IA sont prévus dès la conception.</p>
+          </div>
+          <div class="trust-points security-points">
+            <p><span>✓</span> Protocoles versionnés avec vétérinaire valideur, date, statut et historique des modifications.</p>
+            <p><span>✓</span> Journal des messages, réponses, alertes, validations, accès et documents sources.</p>
+            <p><span>✓</span> Les signaux sensibles stoppent l’automatisation et créent une tâche humaine.</p>
+            <p><span>✓</span> Numa ne diagnostique pas, ne prescrit pas, ne recommande pas de traitement et ne conclut jamais à la place du vétérinaire.</p>
+          </div>
+        </section>
+
+        <section class="trust-band" id="confiance" tabindex="-1">
+          <div class="page-width trust-grid">
+            <div>
+              <p class="eyebrow eyebrow-light">Un cadre clair</p>
+              <h2>Le soin reste humain.</h2>
+            </div>
+            <div class="trust-points">
+              <p><span>✓</span> Numa parle au propriétaire uniquement selon les protocoles validés par votre clinique.</p>
+              <p><span>✓</span> L’assistant clinique interne guide l’équipe dans Strivea Vet et prépare des actions à confirmer, sans agir seul.</p>
+              <p><span>✓</span> Numa ne diagnostique pas, ne recommande pas de traitement et ne conclut jamais à la place d’un vétérinaire.</p>
+              <p><span>✓</span> Consentement propriétaire, traçabilité des accès et contrôle des messages sont prévus dès la conception.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="landing-footer page-width">
+        <a class="brand brand-footer" href="#vitrine" data-route="vitrine"><img src="assets/strivea-logo.png" alt="" /><span>strivea vet</span></a>
+        <p>Prototype de démonstration · Données fictives · 2026</p>
+        <button class="text-link footer-link" type="button" data-route="urgent">Urgence & conformité</button>
+      </footer>
+    </section>
+
+    <section class="login-view" id="view-login" hidden aria-labelledby="login-title">
+      <div class="login-shell page-width">
+        <button class="brand brand-login" type="button" data-route="vitrine" aria-label="Retour à la vitrine Strivea Vet">
+          <img src="assets/strivea-logo.png" alt="" />
+          <span>strivea vet</span>
+        </button>
+
+        <div class="login-grid">
+          <div class="login-copy">
+            <p class="eyebrow eyebrow-light">Espace clinique sécurisé</p>
+            <h1 id="login-title">Connectez-vous à votre clinique Strivea Vet.</h1>
+            <p>Retrouvez les suivis WhatsApp des propriétaires, les alertes Numa, vos protocoles vétérinaires et les actions à préparer pour chaque animal.</p>
+            <div class="login-highlights" aria-label="Garanties de connexion">
+              <span>Consentement propriétaire tracé</span>
+              <span>Données de démonstration fictives</span>
+              <span>Accès clinique contrôlé</span>
+            </div>
+          </div>
+
+          <form class="login-card" data-login-form novalidate>
+            <div class="login-card-head">
+              <span class="login-badge">Démo clinique</span>
+              <h2>Se connecter</h2>
+            <p>Pour la démo, vous pouvez entrer avec n’importe quelles informations.</p>
+            </div>
+            <label for="login-email">Email ou identifiant</label>
+            <input id="login-email" name="email" type="text" autocomplete="username" value="emma.laurent@clinique-demo.fr" />
+            <label for="login-password">Mot de passe</label>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" value="strivea-demo" />
+            <div class="login-options">
+              <label><input type="checkbox" checked /> Rester connecté</label>
+              <button type="button" data-toast="Dans la version complète, un lien sécurisé serait envoyé par email.">Mot de passe oublié ?</button>
+            </div>
+            <button class="button button-forest login-submit" type="submit" data-enter-strivea>Ouvrir l’espace clinique <span aria-hidden="true">→</span></button>
+            <p class="login-note">Prototype local : aucune donnée réelle n’est envoyée.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace" id="workspace" hidden>
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <button class="brand brand-sidebar" type="button" data-route="vitrine" aria-label="Retour à la vitrine Strivea Vet">
+            <img src="assets/strivea-logo.png" alt="" />
+            <span>strivea vet</span>
+          </button>
+          <p class="workspace-label">Clinique vétérinaire démo</p>
+          <nav class="side-nav" aria-label="Navigation de l'espace clinique">
+            <span class="nav-group-label">Suivi</span>
+            <button type="button" data-route="today"><span class="nav-icon" aria-hidden="true">◷</span> Aujourd’hui</button>
+            <button type="button" data-route="agenda"><span class="nav-icon" aria-hidden="true">▦</span> Calendrier <b id="agenda-nav-count">3</b></button>
+            <button type="button" data-route="messages"><span class="nav-icon" aria-hidden="true">◌</span> Animaux <b>4</b></button>
+            <button type="button" data-route="numa"><span class="nav-icon" aria-hidden="true">✦</span> Numa</button>
+            <span class="nav-group-label">Réglages</span>
+            <button type="button" data-route="programme"><span class="nav-icon" aria-hidden="true">⌁</span> Protocoles</button>
+            <button type="button" data-route="launch"><span class="nav-icon" aria-hidden="true">□</span> Lancement <b>8</b></button>
+          </nav>
+        </div>
+        <div class="sidebar-bottom">
+          <button class="urgent-nav" type="button" data-route="urgent"><span aria-hidden="true">!</span> Cadre</button>
+          <button class="profile-nav" type="button" data-route="profile">
+            <span class="avatar avatar-large">E</span>
+            <span><strong>Dr Emma Laurent</strong><small>Vétérinaire</small></span>
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
+      </aside>
+
+      <div class="mobile-bar">
+        <button class="brand brand-mobile" type="button" data-route="vitrine"><img src="assets/strivea-logo.png" alt="" /><span>strivea vet</span></button>
+        <span class="mobile-route" id="mobile-route">Aujourd’hui</span>
+        <button class="avatar avatar-button" type="button" data-route="profile" aria-label="Ouvrir mon profil">E</button>
+      </div>
+
+      <main class="app-main" id="main-content">
+        <header class="interior-command" aria-label="Pilotage de l'espace clinique">
+          <div class="interior-command-copy">
+            <p class="eyebrow">Espace clinique</p>
+            <h2 id="interior-page-title">Aujourd’hui</h2>
+            <p id="interior-page-subtitle">Suivi post-visite, messages WhatsApp et actions vétérinaires.</p>
+          </div>
+          <div class="interior-command-tools">
+            <label class="interior-search"><span class="sr-only">Rechercher dans Strivea Vet</span><input id="interior-search" type="search" placeholder="Rechercher animal, propriétaire, protocole…" /></label>
+            <button class="theme-quick-button" type="button" data-theme-quick aria-label="Changer le thème">◐</button>
+            <button class="assistant-top-button" type="button" data-assistant-open aria-label="Ouvrir l’assistant clinique">
+              <span class="assistant-top-avatar" aria-hidden="true"><img src="assets/assistant-avatar-professional.png" alt="" /></span>
+              <span><strong>Assistant clinique</strong><small>Actions à confirmer</small></span>
+            </button>
+          </div>
+        </header>
+        <div class="interior-search-results" id="interior-search-results" hidden aria-live="polite"></div>
+        <nav class="mobile-nav" aria-label="Navigation mobile">
+          <button type="button" data-route="today">Aujourd’hui</button>
+          <button type="button" data-route="agenda">Calendrier</button>
+          <button type="button" data-route="messages">Animaux</button>
+          <button type="button" data-route="numa">Numa</button>
+          <button type="button" data-route="programme">Protocoles</button>
+          <button type="button" data-route="launch">Lancement</button>
+          <button type="button" data-route="urgent">Urgence</button>
+          <button type="button" data-route="profile">Profil</button>
+        </nav>
+
+        <section class="app-view" id="view-today" aria-labelledby="today-title">
+          <header class="page-header page-header-action">
+            <div>
+              <p class="eyebrow">Tableau de suivi · Lundi 8 septembre</p>
+              <h1 id="today-title">Quels animaux nécessitent réellement votre attention aujourd’hui ?</h1>
+              <p>Strivea Vet regroupe les suivis normaux et met au premier plan uniquement les écarts au protocole, les cas à relire et les tâches préparées.</p>
+            </div>
+            <div class="page-main-action">
+              <span>Action principale</span>
+              <strong>Clôturer la visite de Nala</strong>
+              <p>Une page dédiée transforme la note de fin de consultation de Nala en synthèse, QCM propriétaire et messages à valider.</p>
+              <button class="button button-forest" type="button" data-route="signature" data-signature-link>Lancer Suivi Signature pour Nala <span aria-hidden="true">→</span></button>
+            </div>
+          </header>
+
+          <section class="followup-overview today-route-bar" aria-label="Accès rapide aux suivis animaux">
+            <button class="followup-card is-total" type="button" data-route="messages"><span>24</span><div><strong>Animaux suivis</strong><small>ouvrir la file d’animaux et les conversations</small></div></button>
+            <button class="followup-card is-ok" type="button" data-route="programme"><span>20</span><div><strong>Normaux</strong><small>voir les protocoles qui continuent seuls</small></div></button>
+            <button class="followup-card is-watch" type="button" data-route="messages"><span id="organize-count">3</span><div><strong>À surveiller</strong><small>points à relire dans les messages</small></div></button>
+            <button class="followup-card is-alert" type="button" data-route="messages"><span id="consultation-priority-count">1</span><div><strong>Signal à évaluer</strong><small>dossier à ouvrir avant toute suite</small></div></button>
+          </section>
+
+          <section class="panel today-agenda-panel" aria-labelledby="today-agenda-title">
+            <div class="panel-heading">
+              <div><p class="eyebrow">Agenda connecté</p><h2 id="today-agenda-title">Les rendez-vous devant vous, à l’heure précise.</h2><p>Chaque rendez-vous créé dans l’Agenda remonte ici avec l’animal, le propriétaire, le motif et l’action de suivi prévue.</p></div>
+              <button class="button button-outline" type="button" data-route="agenda">Ouvrir le calendrier complet</button>
+            </div>
+            <div class="today-agenda-strip" aria-label="Résumé de l’agenda connecté">
+              <article>
+                <span>Prochaine fenêtre clinique</span>
+                <strong id="agenda-next-slot">09:30 · Moka</strong>
+                <small id="agenda-next-copy">Contrôle post-visite · suivi associé.</small>
+              </article>
+              <article>
+                <span>Agenda du jour</span>
+                <strong><b id="today-agenda-count">0</b> RDV à préparer</strong>
+                <small>Les visites du calendrier remontent automatiquement ici.</small>
+              </article>
+              <article>
+                <span>Source</span>
+                <strong>Calendrier Strivea</strong>
+                <small>Ajout manuel, capture importée ou connecteur Google.</small>
+              </article>
+            </div>
+            <div class="today-agenda-list" id="today-agenda-list" aria-live="polite"></div>
+          </section>
+
+          <section class="panel cabinet-alert" data-consultation-alert aria-label="Alerte de coordination de la clinique">
+            <span class="cabinet-alert-icon" aria-hidden="true">!</span>
+            <div>
+              <p class="eyebrow">Alerte actionnable · suivi post-stérilisation</p>
+              <h2>Nala nécessite une décision de la clinique.</h2>
+              <p>Propriétaire : Claire Martin. Appétit absent depuis hier soir, plaie décrite comme rouge et question sur la collerette. Numa remonte le signal sans interprétation clinique et sans envoyer de lien de rendez-vous sans validation.</p>
+            </div>
+            <div class="cabinet-alert-actions"><span class="tag tag-amber">Signal à évaluer</span><button class="button button-forest" type="button" data-route="messages">Ouvrir le dossier <span aria-hidden="true">→</span></button></div>
+          </section>
+
+          <div class="content-grid today-grid">
+            <section class="panel priority-panel">
+              <div class="panel-heading"><div><p class="eyebrow">Exceptions à traiter</p><h2>Les priorités du jour</h2></div><button class="text-link" type="button" data-route="messages">Tout voir</button></div>
+              <button class="priority-row" type="button" data-route="messages">
+                <span class="person-initials">NA</span><span class="priority-copy"><strong>Nala · Claire Martin</strong><small>Plaie rouge + appétit absent</small></span><span class="tag tag-amber">Signal à évaluer</span><span aria-hidden="true">›</span>
+              </button>
+              <button class="priority-row" type="button" data-route="messages">
+                <span class="person-initials person-soft">OS</span><span class="priority-copy"><strong>Oslo · Karim Benali</strong><small>Silence depuis le QCM J+5 post-orthopédie</small></span><span class="tag tag-sand">À surveiller</span><span aria-hidden="true">›</span>
+              </button>
+              <button class="priority-row" type="button" data-route="programme">
+                <span class="person-initials person-blue">MO</span><span class="priority-copy"><strong>Moka · Julie Petit</strong><small>Point diabète planifié à 10:30</small></span><span class="tag tag-sage">Programmé</span><span aria-hidden="true">›</span>
+              </button>
+            </section>
+
+            <aside class="panel activity-panel">
+              <div class="panel-heading"><div><p class="eyebrow">Chronologie clinique</p><h2>Ce qui s’est passé</h2></div></div>
+              <ol class="activity-list">
+                 <li><span class="activity-line"></span><div><strong>09:16</strong><p>Alerte Nala : tri vétérinaire requis.</p></div></li>
+                 <li><span class="activity-line sage-line"></span><div><strong>10:30</strong><p>Synthèse Moka prête avant prochain contrôle.</p></div></li>
+                 <li><span class="activity-line blue-line"></span><div><strong>12:00</strong><p>18 suivis normaux continuent sans intervention clinique.</p></div></li>
+              </ol>
+               <div class="soft-callout"><span aria-hidden="true">⌁</span><p>Philosophie produit : Strivea Vet ne montre pas tout, seulement ce qui aide l’équipe vétérinaire à décider plus vite.</p></div>
+            </aside>
+          </div>
+
+          <section class="panel previsit-panel" aria-labelledby="previsit-title">
+            <div class="panel-heading">
+              <div><p class="eyebrow">Brief clinique avant visite</p><h2 id="previsit-title">Le point essentiel est prêt avant l’arrivée du patient.</h2></div>
+              <span class="tag tag-sage">Prêt à relire</span>
+            </div>
+            <div class="previsit-summary">
+               <div><strong>Moka · Julie Petit</strong><small>Contrôle diabète félin · demain 09:30 · agenda connecté</small></div>
+              <ul>
+                 <li><span>Appétit</span><strong>stable</strong></li>
+                 <li><span>Traitement</span><strong>6/7 jours</strong></li>
+                 <li><span>Évolution</span><strong>à surveiller</strong></li>
+                 <li><span>Point persistant</span><strong>prise d’eau élevée</strong></li>
+              </ul>
+               <button class="button button-outline" type="button" data-route="messages">Ouvrir le brief animal</button>
+            </div>
+          </section>
+
+          <section class="panel compact-panel">
+            <div class="panel-heading"><div><p class="eyebrow">Raccourcis</p><h2>Votre clinique, simplement</h2></div></div>
+            <div class="shortcut-row">
+              <button type="button" data-route="messages"><span>◌</span><strong>Lire les messages</strong><small>Une conversation à la fois</small></button>
+              <button type="button" data-route="signature" data-signature-link><span>✦</span><strong>Suivi Signature</strong><small>Clôturer la visite de Nala</small></button>
+              <button type="button" data-route="numa"><span>↗</span><strong>Règles Numa</strong><small>RDV, avis, rappels</small></button>
+              <button type="button" data-route="programme"><span>⌁</span><strong>Régler les protocoles</strong><small>Messages, QCM, timing</small></button>
+            </div>
+          </section>
+        </section>
+
+        <section class="app-view" id="view-agenda" aria-labelledby="agenda-title">
+          <section class="calendar-shell" aria-label="Calendrier clinique semaine">
+            <header class="calendar-topbar">
+              <div class="calendar-month"><strong id="agenda-title">septembre</strong> <span>2026</span></div>
+              <div class="calendar-view-switch" role="tablist" aria-label="Vue calendrier">
+                <button type="button">Jour</button>
+                <button class="active" type="button">Semaine</button>
+                <button type="button">Mois</button>
+              </div>
+              <div class="calendar-actions">
+                <button class="calendar-nav-button" type="button" aria-label="Semaine précédente">‹</button>
+                <button class="calendar-today-button" type="button">Aujourd’hui</button>
+                <button class="calendar-nav-button" type="button" aria-label="Semaine suivante">›</button>
+                <button class="calendar-plus" id="open-agenda-modal" type="button" aria-label="Ajouter un rendez-vous">+</button>
+              </div>
+            </header>
+
+            <div class="calendar-week-head" aria-hidden="true">
+              <span></span>
+              <strong><b>13</b> dim.</strong>
+              <strong><b>14</b> lun.</strong>
+              <strong><b>15</b> mar.</strong>
+              <strong><b>16</b> mer.</strong>
+              <strong><b>17</b> jeu.</strong>
+              <strong class="is-today"><b>18</b> ven.</strong>
+              <strong><b>19</b> sam.</strong>
+            </div>
+
+            <div class="calendar-grid-wrap">
+              <div class="calendar-grid" id="calendar-grid" data-calendar-grid aria-label="Grille des rendez-vous de la semaine">
+                <div class="calendar-time-column" aria-hidden="true">
+                  <span>Jour entier</span>
+                  <span>8h</span>
+                  <span>9h</span>
+                  <span>10h</span>
+                  <span>11h</span>
+                  <span>Midi</span>
+                  <span>13h</span>
+                  <span>14h</span>
+                  <span>15h</span>
+                  <span>16h</span>
+                  <span>17h</span>
+                  <span>18h</span>
+                  <span>19h</span>
+                  <span>20h</span>
+                  <span>21h</span>
+                </div>
+                <div class="calendar-days-grid" id="calendar-events-layer" aria-live="polite"></div>
+                <div class="calendar-mouse-line" id="calendar-mouse-line" hidden><span id="calendar-mouse-time">--:--</span><i></i></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="agenda-connectors" aria-label="Importer ou connecter un agenda externe">
+            <article class="panel agenda-import-panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Import intelligent</p>
+                  <h2>Déposer une capture d’écran d’un autre agenda</h2>
+                  <p>Glissez une capture ou choisissez une image depuis l’ordinateur. Dans cette démo, Strivea Vet simule l’extraction IA puis vous laisse valider avant d’ajouter les rendez-vous.</p>
+                </div>
+                <span class="tag tag-sage">Capture → RDV</span>
+              </div>
+              <div class="agenda-import-dropzone" id="agenda-import-dropzone" role="button" tabindex="0">
+                <span class="agenda-import-icon" aria-hidden="true">⇪</span>
+                <strong>Ajouter une capture d’écran</strong>
+                <small>PNG, JPG, WebP ou PDF · aperçu local uniquement</small>
+              </div>
+              <input class="sr-only" id="agenda-screenshot-input" type="file" accept="image/*,.pdf" />
+              <div class="agenda-import-preview" id="agenda-import-preview" hidden></div>
+              <div class="agenda-detected-list" id="agenda-detected-list" hidden aria-live="polite"></div>
+              <div class="agenda-import-actions">
+                <button class="button button-forest" id="agenda-import-apply" type="button" disabled>Ajouter les RDV détectés</button>
+                <button class="quiet-button" id="agenda-import-clear" type="button">Réinitialiser</button>
+              </div>
+              <p class="field-help">Version réelle : cette zone serait branchée à un OCR/IA sécurisé. Ici, rien ne quitte votre navigateur.</p>
+            </article>
+
+            <article class="panel agenda-google-panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Connecteur agenda</p>
+                  <h2>Google Calendar</h2>
+                  <p>Connectez l’agenda de la clinique pour synchroniser les rendez-vous, éviter les doublons et déclencher les suivis Numa au bon moment.</p>
+                </div>
+                <span class="tag tag-sand" id="google-calendar-status">Non connecté</span>
+              </div>
+              <label for="google-calendar-email">Compte calendrier de la clinique</label>
+              <input id="google-calendar-email" type="email" value="agenda@clinique-laurent-vet.fr" />
+              <div class="google-calendar-actions">
+                <button class="button button-forest" id="connect-google-calendar" type="button">Connecter Google Calendar</button>
+                <button class="button button-outline" id="sync-google-calendar" type="button" disabled>Synchroniser la semaine</button>
+                <button class="quiet-button" id="export-google-calendar" type="button" disabled>Exporter les RDV Strivea</button>
+              </div>
+              <div class="google-calendar-note" id="google-calendar-note" aria-live="polite">
+                <span aria-hidden="true">◌</span>
+                <p>Démo locale : la connexion OAuth, les permissions et l’API Google devront être ajoutées côté serveur pour une vraie synchronisation.</p>
+              </div>
+            </article>
+          </section>
+
+          <section class="agenda-modal" id="agenda-modal" hidden aria-labelledby="agenda-create-title" aria-modal="true" role="dialog">
+            <div class="agenda-modal-card panel">
+              <div class="panel-heading">
+                <div><p class="eyebrow">Nouveau rendez-vous</p><h2 id="agenda-create-title">Inscrire un RDV complet</h2><p>Choisissez un client déjà enregistré ou créez un nouveau profil animal/propriétaire.</p></div>
+                <button class="quiet-button" id="close-agenda-modal" type="button">Fermer</button>
+              </div>
+              <form class="agenda-form" id="agenda-form">
+                <div class="agenda-client-choice" role="radiogroup" aria-label="Type de client">
+                  <label><input type="radio" name="agenda-client-mode" value="existing" checked /> Client déjà enregistré</label>
+                  <label><input type="radio" name="agenda-client-mode" value="new" /> Nouveau client</label>
+                </div>
+                <div class="agenda-existing-client" id="agenda-existing-client">
+                  <label for="agenda-existing-patient">Client / animal enregistré<select id="agenda-existing-patient"></select></label>
+                </div>
+                <div class="agenda-new-client" id="agenda-new-client" hidden>
+                  <label for="agenda-animal">Animal<input id="agenda-animal" type="text" placeholder="Ex. Rio" /></label>
+                  <label for="agenda-owner">Propriétaire<input id="agenda-owner" type="text" placeholder="Ex. Manon Petit" /></label>
+                  <label for="agenda-phone">Téléphone / WhatsApp<input id="agenda-phone" type="tel" placeholder="+33 6 ..." /></label>
+                </div>
+                <div class="programme-fields programme-fields-three">
+                  <label for="agenda-day">Jour<select id="agenda-day"><option value="5" selected>Vendredi 18</option><option value="1">Lundi 14</option><option value="2">Mardi 15</option><option value="3">Mercredi 16</option><option value="4">Jeudi 17</option><option value="6">Samedi 19</option></select></label>
+                  <label for="agenda-time">Heure<input id="agenda-time" type="time" value="14:30" required /></label>
+                  <label for="agenda-duration">Durée<select id="agenda-duration"><option>20 min</option><option selected>30 min</option><option>45 min</option><option>60 min</option></select></label>
+                </div>
+                <label for="agenda-type">Type de rendez-vous<select id="agenda-type"><option>Contrôle post-visite</option><option>Consultation</option><option>Vaccin</option><option>Chirurgie</option><option>Urgence à évaluer</option></select></label>
+                <label for="agenda-reason">Motif<textarea id="agenda-reason" rows="3" placeholder="Ex. contrôle boiterie, vaccin annuel, suivi post-op..." required></textarea></label>
+                <label for="agenda-protocol">Suivi Numa à associer<select id="agenda-protocol"><option>J0 · retour consultation</option><option>Post-stérilisation</option><option>Post-op orthopédie</option><option>Rappel vaccin</option><option>Suivi chronique</option><option>Aucun pour l’instant</option></select></label>
+                <label for="agenda-note">Note interne<textarea id="agenda-note" rows="3" placeholder="Infos utiles pour l’équipe, sans donnée réelle dans cette démo."></textarea></label>
+                <div class="agenda-form-actions">
+                  <button class="button button-forest" type="submit">Ajouter le rendez-vous</button>
+                  <button class="button button-outline" type="button" id="agenda-demo-fill">Remplir un exemple</button>
+                </div>
+                <p class="field-help">Prototype local : le rendez-vous est ajouté au calendrier et à Aujourd’hui jusqu’au rechargement de la page.</p>
+              </form>
+            </div>
+          </section>
+        </section>
+
+        <section class="app-view" id="view-signature" aria-labelledby="signature-page-title">
+          <header class="page-header page-header-action">
+            <div>
+              <p class="eyebrow">Suivi Signature · clôture de visite</p>
+              <h1 id="signature-page-title">Parlez à Numa, elle prépare toute la suite.</h1>
+              <p>Après la consultation, le vétérinaire raconte ce qui s’est passé. Numa part de vos protocoles enregistrés, prépare une proposition adaptée au patient, puis laisse le vétérinaire modifier ou valider avant lancement.</p>
+            </div>
+            <div class="page-main-action signature-side-action">
+              <span>Animal concerné</span>
+              <strong id="signature-target-name">Nala · Claire Martin</strong>
+              <p id="signature-target-copy">Stérilisation · suivi J0/J+1 · WhatsApp propriétaire.</p>
+              <button class="button button-outline" type="button" data-route="today">Retour Aujourd’hui</button>
+            </div>
+          </header>
+
+          <section class="panel signature-panel signature-page-panel" aria-labelledby="signature-title">
+            <div class="signature-ai-editor signature-ai-primary" aria-labelledby="signature-title">
+              <div class="signature-ai-head">
+                <div>
+                  <span class="signature-kicker">Conversation post-consultation</span>
+                  <p class="eyebrow">Numa · copilote du suivi</p>
+                  <h2 id="signature-title">Dites simplement ce qui s’est passé.</h2>
+                  <p>Numa transforme l’échange en plan de suivi, protocole, messages, QCM et actions à valider. Elle ne décide rien seule.</p>
+                </div>
+                <span class="tag tag-sand">Brouillon</span>
+              </div>
+              <div class="signature-ai-thread" id="signature-ai-thread" aria-live="polite">
+                <div class="signature-ai-message assistant">
+                  <strong>Numa</strong>
+                  <p>Racontez-moi la consultation : ce qui a été fait, ce que le propriétaire doit faire, le protocole à utiliser si vous avez une préférence, et les changements éventuels pour cet animal.</p>
+                </div>
+              </div>
+              <div class="signature-ai-presets" aria-label="Exemples de suivi post-consultation">
+                <button type="button" data-signature-prompt="Nala a été stérilisée ce matin. Retour à domicile OK. Collerette 10 jours. Surveiller appétit, énergie et plaie. Si plaie rouge ou refus de manger, créer une alerte clinique.">Post-stérilisation</button>
+                <button type="button" data-signature-prompt="Oslo revient après une chirurgie orthopédique. Repos strict, sorties courtes, surveiller appui, douleur apparente, pansement et appétit. Je veux une relance J+3.">Post-op orthopédie</button>
+                <button type="button" data-signature-prompt="Moka est en suivi chronique. Vérifier prise du traitement, appétit, eau, poids et comportement. Préparer une synthèse pour le prochain contrôle.">Suivi chronique</button>
+              </div>
+              <form class="signature-ai-form" id="signature-ai-form">
+                <label class="sr-only" for="signature-ai-input">Décrire la consultation à Numa</label>
+                <textarea id="signature-ai-input" rows="3" placeholder="Ex. Nala a été stérilisée, retour à domicile OK, collerette 10 jours, surveiller appétit et plaie, ajouter une relance J+3…"></textarea>
+                <button class="button button-forest" type="submit">Préparer le suivi</button>
+              </form>
+            </div>
+            <div class="signature-output-stack">
+              <div class="signature-protocol-main signature-protocol-side">
+                <div class="panel-heading signature-side-heading">
+                  <div>
+                    <p class="eyebrow">Résultat de la discussion</p>
+                    <h2 id="signature-protocol-title">Protocole patient à valider.</h2>
+                    <p>Numa utilise d’abord votre bibliothèque. Si le vétérinaire refuse la proposition ou demande autre chose, elle ajuste le brouillon ou crée un nouveau protocole local à enregistrer.</p>
+                  </div>
+                  <span class="tag tag-sage" id="signature-protocol-match">À analyser</span>
+                </div>
+                <article class="signature-protocol-card" id="signature-protocol-card">
+                  <span class="signature-protocol-label">Protocole de la bibliothèque</span>
+                  <h3 id="signature-protocol-name">En attente de votre note</h3>
+                  <p id="signature-protocol-reason">Décrivez la consultation à Numa. Elle partira de vos protocoles enregistrés ; si aucun ne convient, elle pourra créer une nouvelle base locale à partir de vos consignes.</p>
+                  <ol id="signature-protocol-steps">
+                    <li>Analyse de la note vétérinaire</li>
+                    <li>Choix du protocole existant</li>
+                    <li>Validation ou modification par discussion</li>
+                  </ol>
+                  <div class="signature-protocol-actions">
+                    <button class="button button-forest" id="signature-accept-protocol" type="button">Valider et lancer le suivi</button>
+                    <button class="button button-outline" id="signature-edit-protocol" type="button">Modifier avec Numa</button>
+                  </div>
+                  <p class="field-help" id="signature-protocol-status">Le protocole proposé reste un brouillon clinique à valider.</p>
+                </article>
+              </div>
+              <textarea id="signature-note" class="sr-only" tabindex="-1" aria-hidden="true">Nala · chatte stérilisée ce matin, retour à domicile OK. Collerette 10 jours, surveiller appétit et plaie. Recontacter la clinique si plaie rouge, suintement ou refus de manger.</textarea>
+              <div class="signature-actions">
+                <button class="button button-forest" id="signature-generate" type="button" data-signature-start>Préparer le suivi avec Numa <span aria-hidden="true">✦</span></button>
+                <small id="signature-status">Aucun envoi réel : tout reste en brouillon dans cette démonstration.</small>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel signature-history-workbench" aria-labelledby="signature-history-title">
+            <section class="signature-animal-history" aria-labelledby="signature-history-title">
+              <div class="signature-history-head">
+                <div>
+                  <p class="eyebrow">Dossier rapide</p>
+                  <h3 id="signature-history-title">Antécédents de Nala</h3>
+                </div>
+                <span class="tag tag-sand" id="signature-history-status">Signal à évaluer</span>
+              </div>
+              <p id="signature-history-summary">Chatte européenne · 3 ans · propriétaire Claire Martin · WhatsApp préféré.</p>
+              <div class="signature-history-facts" id="signature-history-facts">
+                <span>Vaccins à jour</span>
+                <span>Aucune allergie déclarée</span>
+                <span>Digestion sensible</span>
+              </div>
+              <div class="signature-history-timeline" id="signature-history-list">
+                <article><strong>Aujourd’hui</strong><p>Stérilisation, anesthésie OK, retour à domicile, collerette 10 jours.</p></article>
+                <article><strong>16 sept.</strong><p>Consultation pré-opératoire et consentement intervention validé.</p></article>
+                <article><strong>Juillet</strong><p>Dermatite légère résolue après contrôle.</p></article>
+              </div>
+              <div class="signature-history-note" id="signature-history-care">
+                <strong>À garder en tête</strong>
+                <p>Claire répond vite sur WhatsApp et préfère des consignes courtes. Surveiller appétit, plaie et énergie.</p>
+              </div>
+            </section>
+          </section>
+        </section>
+
+        <section class="app-view" id="view-messages" aria-labelledby="messages-title">
+          <header class="page-header compact-header">
+            <div><p class="eyebrow">Animaux suivis</p><h1 id="messages-title">File d’exceptions clinique.</h1><p>Ce n’est pas une boîte de réception complète : Strivea Vet met en avant les suivis qui demandent une décision, une relecture ou une synthèse vétérinaire.</p></div>
+            <div class="page-header-actions">
+              <button class="button button-forest" id="open-animal-profile" type="button">+ Créer un profil animal</button>
+            </div>
+          </header>
+          <section class="panel animal-profile-create" id="animal-profile-panel" hidden aria-labelledby="animal-profile-title">
+            <div class="panel-heading">
+              <div><p class="eyebrow">Nouveau suivi</p><h2 id="animal-profile-title">Créer un profil animal/propriétaire</h2><p>Ajoutez un animal suivi par la clinique. Le profil apparaît immédiatement dans la file et peut recevoir un protocole Numa.</p></div>
+              <button class="quiet-button" id="close-animal-profile" type="button">Fermer</button>
+            </div>
+            <form class="animal-profile-form" id="animal-profile-form">
+              <label>Nom de l’animal<input id="new-animal-name" type="text" placeholder="Ex. Milo" required /></label>
+              <label>Propriétaire<input id="new-owner-name" type="text" placeholder="Ex. Sarah Moreau" required /></label>
+              <label>Protocole actif<input id="new-protocol-name" type="text" placeholder="Ex. J0 · retour consultation" value="J0 · retour consultation" /></label>
+              <label>Statut<select id="new-followup-status"><option value="NORMAL">NORMAL</option><option value="À SURVEILLER">À SURVEILLER</option><option value="SIGNAL À ÉVALUER">SIGNAL À ÉVALUER</option><option value="SUIVI TERMINÉ">SUIVI TERMINÉ</option></select></label>
+              <div class="form-actions">
+                <button class="button button-forest" type="submit">Créer le profil</button>
+                <button class="button button-outline" id="cancel-animal-profile" type="button">Annuler</button>
+              </div>
+            </form>
+          </section>
+          <section class="message-focus-bar" aria-label="Action prioritaire sur les messages">
+            <div><span>Priorité</span><strong>Nala passe en statut SIGNAL À ÉVALUER.</strong><p>Numa a repéré un écart prévu par le protocole post-stérilisation. La clinique décide de la suite.</p></div>
+            <div class="message-focus-actions"><button class="button button-forest" type="button" data-assistant-action="callback">Préparer le rappel</button><button class="button button-outline" type="button" data-route="numa">Préparer un RDV</button></div>
+          </section>
+          <div class="messages-layout">
+            <aside class="inbox panel" id="animal-profile-list" aria-label="Conversations propriétaires">
+              <div class="inbox-head"><strong>Animaux à suivre</strong><span class="tag tag-forest">4 exceptions</span></div>
+              <button class="conversation selected" type="button" data-patient="camille"><span class="person-initials">NA</span><span><strong>Nala · Claire Martin</strong><small>SIGNAL À ÉVALUER · plaie rouge</small></span><time>09:16</time></button>
+              <button class="conversation" type="button" data-patient="louis"><span class="person-initials person-soft">OS</span><span><strong>Oslo · Karim Benali</strong><small>À SURVEILLER · silence J+5</small></span><time>Hier</time></button>
+              <button class="conversation" type="button" data-patient="amelie"><span class="person-initials person-blue">MO</span><span><strong>Moka · Julie Petit</strong><small>CHRONIQUE · synthèse prête</small></span><time>Ven.</time></button>
+              <button class="conversation" type="button" data-patient="nora"><span class="person-initials person-lilac">LU</span><span><strong>Luna · Marc Delmas</strong><small>SUIVI TERMINÉ · avis possible</small></span><time>Jeu.</time></button>
+            </aside>
+            <section class="thread panel" aria-label="Conversation de démonstration avec Claire Martin, propriétaire de Nala">
+              <header class="thread-head">
+                <div><span class="person-initials">NA</span><span><strong id="thread-name">Nala · Claire Martin</strong><small>Consentement WhatsApp · 04 sept. 2026</small></span></div>
+                <button class="quiet-button" type="button" data-assistant-open>Ouvrir l’assistant clinique <span aria-hidden="true">✦</span></button>
+              </header>
+              <div class="safety-ribbon"><span aria-hidden="true">⌁</span> WhatsApp sert aux échanges pratiques avec le propriétaire. Les informations détaillées restent dans l’espace Strivea Vet sécurisé.</div>
+              <section class="consultation-alert" data-consultation-alert aria-label="Signal de consultation à évaluer">
+                <span class="consultation-alert-icon" aria-hidden="true">!</span>
+                <div><strong>À évaluer par la clinique</strong><p>La réponse libre de Claire déclenche votre règle post-stérilisation. Numa n’interprète pas la situation ; votre équipe décide de la suite.</p></div>
+                <button class="quiet-button" type="button" data-route="numa">Préparer le lien RDV →</button>
+              </section>
+              <section class="previsit-card-inline" aria-label="Synthèse courte avant rendez-vous">
+                <div><p class="eyebrow">Synthèse instantanée</p><strong>À retenir avant rappel ou contrôle</strong></div>
+                <p>Nala, chatte stérilisée hier. Claire signale appétit absent depuis hier soir, plaie rouge et question sur la collerette. Aucune conclusion clinique automatique.</p>
+              </section>
+              <div class="chat-thread" id="chat-thread">
+                <div class="thread-day">Aujourd’hui</div>
+                <div class="chat-message numa"><span class="message-sender">Numa · IA de suivi de la clinique</span><p>Bonjour Claire, petit point prévu pour Nala après sa stérilisation. A-t-elle mangé ? La plaie vous semble-t-elle propre ?</p><time>09:10</time></div>
+                <div class="chat-message patient"><p>Elle n’a pas vraiment mangé depuis hier soir et la plaie me paraît un peu rouge. Elle essaie aussi d’enlever sa collerette.</p><time>09:16</time></div>
+                <div class="qcm-card patient-qcm-card" id="followup-qcm" aria-label="Questionnaire vu par le propriétaire sur WhatsApp">
+                  <div><p class="eyebrow">Côté propriétaire · WhatsApp</p><strong>Claire, comment va Nala depuis l’intervention ?</strong><small>Répondez en une touche. Si vous êtes inquiète, la clinique sera prévenue pour décider de la suite.</small></div>
+                  <div class="qcm-options">
+                    <button type="button" data-qcm="progresse">Elle va bien</button>
+                    <button type="button" data-qcm="stable">C’est stable</button>
+                    <button type="button" data-qcm="difficile">Je suis inquiète</button>
+                    <button type="button" data-qcm="rappel">Je veux être rappelée</button>
+                  </div>
+                </div>
+              </div>
+              <div class="thread-actions" id="thread-actions">
+                <button class="button button-forest" type="button" data-assistant-action="reply">Brouillon clinique</button>
+                <button class="button button-outline" type="button" data-assistant-action="callback">Préparer un rappel</button>
+                <button class="button button-outline" type="button" data-assistant-action="doctolib">Préparer RDV & avis</button>
+                <button class="button button-outline" type="button" data-route="signature">Suivi Signature</button>
+              </div>
+              <form class="composer" id="message-form">
+                <label class="sr-only" for="message-input">Réponse de démonstration</label>
+                <input id="message-input" maxlength="240" placeholder="Écrire un brouillon pour Claire…" />
+                <button class="button button-forest" type="submit">Ajouter</button>
+              </form>
+              <p class="thread-footer">Brouillon visible dans cette démo uniquement. Une validation humaine est requise avant tout envoi réel.</p>
+              <section class="patient-record-panel" aria-label="Résumé animal et statut de suivi">
+                <div class="patient-record-top">
+                  <div><p class="eyebrow">Dossier de suivi</p><h2>Nala</h2><small>Propriétaire : Claire Martin · Protocole actif : post-stérilisation J+1</small></div>
+                  <span class="status-pill status-attention">SIGNAL À ÉVALUER</span>
+                </div>
+                <div class="patient-summary-grid">
+                  <article><span>Dernière interaction</span><strong>09:16</strong><small>question collerette</small></article>
+                  <article><span>Appétit</span><strong>absent</strong><small>depuis hier soir</small></article>
+                  <article><span>Plaie</span><strong>rouge</strong><small>signal propriétaire</small></article>
+                  <article><span>Prochaine étape</span><strong>À décider</strong><small>rappel ou RDV validé</small></article>
+                </div>
+                <div class="patient-timeline-mini">
+                  <span>J0 consignes envoyées</span>
+                  <span>J+1 QCM répondu</span>
+                  <span class="is-current">J+1 alerte clinique</span>
+                  <span>J+7 contrôle prévu</span>
+                </div>
+              </section>
+            </section>
+          </div>
+        </section>
+
+        <section class="app-view" id="view-numa" aria-labelledby="numa-hub-title">
+          <section class="numa-tabs-hub" aria-labelledby="numa-hub-title">
+            <div class="numa-hub-head">
+              <div>
+                <p class="eyebrow">Numa · automatisations propriétaires</p>
+                <h1 id="numa-hub-title">Un onglet, une action claire.</h1>
+                <p>Choisissez ce que Numa doit préparer : suivi post-visite, alerte clinique, rendez-vous, avis ou cadre d’autonomie. Rien n’est envoyé sans règle validée par la clinique.</p>
+              </div>
+              <div class="numa-hub-identity">
+                <img src="assets/numa-avatar-professional.png" alt="" />
+                <span><strong>Numa</strong><small>Côté propriétaire · WhatsApp</small></span>
+              </div>
+            </div>
+            <div class="numa-tabs" role="tablist" aria-label="Modules de Numa">
+              <button class="active" type="button" role="tab" aria-selected="true" aria-controls="numa-tab-postvisit" data-numa-tab="postvisit"><span>01</span><strong>Suivi post-visite</strong><small>J0, J+1, J+7</small></button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="numa-tab-alerts" data-numa-tab="alerts"><span>02</span><strong>Alertes clinique</strong><small>écarts au protocole</small></button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="numa-tab-rdv" data-numa-tab="rdv"><span>03</span><strong>RDV & avis</strong><small>liens validés</small></button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="numa-tab-auto" data-numa-tab="auto"><span>04</span><strong>Autonomie</strong><small>ce qui peut partir seul</small></button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="numa-tab-frame" data-numa-tab="frame"><span>05</span><strong>Cadre</strong><small>limites & sécurité</small></button>
+            </div>
+            <div class="numa-tab-pages">
+              <section class="panel numa-tab-page active" id="numa-tab-postvisit" data-numa-panel="postvisit" role="tabpanel">
+                <div class="panel-heading"><div><p class="eyebrow">Parcours actif</p><h2>Suivi post-visite pour <span data-selected-animal>Nala</span></h2><p>Numa prépare les messages WhatsApp prévus par le protocole. L’équipe garde la validation sur les cas sensibles.</p></div><span class="tag tag-sage">Protocole validé</span></div>
+                <div class="numa-flow-list">
+                  <article><span>J0</span><strong>Retour à domicile</strong><p>Message rassurant + consignes de collerette et surveillance.</p></article>
+                  <article><span>J+1</span><strong>QCM propriétaire</strong><p>Appétit, énergie, plaie, comportement et demande de rappel.</p></article>
+                  <article><span>J+7</span><strong>Clôture ou contrôle</strong><p>Relance douce, tâche équipe ou lien RDV uniquement si la règle le prévoit.</p></article>
+                </div>
+                <div class="numa-page-actions"><button class="button button-forest" type="button" data-route="signature" data-signature-start data-signature-link>Lancer Suivi Signature pour Nala</button><button class="button button-outline" type="button" data-route="programme">Modifier le protocole</button></div>
+              </section>
+
+              <section class="panel numa-tab-page" id="numa-tab-alerts" data-numa-panel="alerts" role="tabpanel" hidden>
+                <div class="panel-heading"><div><p class="eyebrow">Reprise humaine</p><h2>Alertes clinique qualifiées</h2><p>Numa ne conclut pas : elle signale une réponse qui sort du cadre prévu et crée une tâche lisible pour l’équipe.</p></div><span class="tag tag-amber">Validation requise</span></div>
+                <div class="numa-alert-builder">
+                  <div><strong>Règle actuelle</strong><p>Si le propriétaire mentionne refus de manger, plaie rouge, suintement, douleur inhabituelle ou inquiétude forte : stopper l’automatisation et demander une évaluation par la clinique.</p></div>
+                  <button class="button button-forest" type="button" data-ai-action="callback">Préparer l’alerte pour Nala</button>
+                </div>
+                <div class="result-box"><strong>Message interne</strong><p>Un écart au protocole post-stérilisation a été détecté. L’équipe clinique doit évaluer la situation avant toute suite.</p></div>
+              </section>
+
+              <section class="panel numa-tab-page" id="numa-tab-rdv" data-numa-panel="rdv" role="tabpanel" hidden>
+                <div class="panel-heading"><div><p class="eyebrow">Liens externes</p><h2>Rendez-vous et avis Google</h2><p>Numa peut préparer le bon lien au bon moment, sans gérer l’agenda ni pousser un avis quand l’animal ne va pas bien.</p></div><span class="tag tag-sand">Services externes</span></div>
+                <div class="numa-two-actions">
+                  <article><strong>Proposer un RDV</strong><p>Uniquement si le propriétaire le demande ou si l’équipe confirme qu’un contrôle est pertinent.</p><button class="quiet-button" type="button" data-route="numa">Régler dans Numa →</button></article>
+                  <article><strong>Demander un avis</strong><p>Après une clôture positive, avec un message neutre et facultatif.</p><button class="quiet-button" type="button" data-route="numa">Régler dans Numa →</button></article>
+                </div>
+              </section>
+
+              <section class="panel numa-tab-page" id="numa-tab-auto" data-numa-panel="auto" role="tabpanel" hidden>
+                <div class="panel-heading"><div><p class="eyebrow">Autonomie contrôlée</p><h2>Ce qui peut partir seul</h2><p>Le praticien définit ce qui est automatique, ce qui reste en brouillon, et ce qui doit toujours revenir à l’équipe.</p></div><span class="tag tag-forest">Réglable</span></div>
+                <div class="numa-autonomy-list">
+                  <label class="switch-row"><span><strong>Messages J0/J+1 validés</strong><small>Partent seuls uniquement si le protocole est publié.</small></span><input type="checkbox" checked /><i></i></label>
+                  <label class="switch-row"><span><strong>Réponses libres propriétaires</strong><small>Toujours relues par l’équipe avant décision.</small></span><input type="checkbox" checked /><i></i></label>
+                  <label class="switch-row"><span><strong>Liens RDV</strong><small>Préparés selon règle, validables avant envoi.</small></span><input type="checkbox" checked /><i></i></label>
+                </div>
+              </section>
+
+              <section class="panel numa-tab-page" id="numa-tab-frame" data-numa-panel="frame" role="tabpanel" hidden>
+                <div class="panel-heading"><div><p class="eyebrow">Cadre clinique</p><h2>Ce que Numa ne fait jamais</h2><p>Le cadre doit être compréhensible par l’équipe et rassurant pour le propriétaire.</p></div><span class="tag tag-sage">Sécurité</span></div>
+                <div class="guardrails numa-frame-guardrails">
+                  <div><strong>Pas de diagnostic</strong><p>Numa ne nomme pas une pathologie et ne conclut pas à la place du vétérinaire.</p></div>
+                  <div><strong>Pas de traitement</strong><p>Numa ne recommande ni médicament, ni dosage, ni conduite thérapeutique.</p></div>
+                  <div><strong>Traçabilité</strong><p>Messages, réponses, consentements et validations doivent être journalisés.</p></div>
+                  <div><strong>Reprise humaine</strong><p>Tout signal sensible crée une tâche clinique au lieu de poursuivre l’automatisation.</p></div>
+                </div>
+                <div class="numa-settings-showcase" aria-label="Personnalisation possible de Numa">
+                  <div>
+                    <p class="eyebrow">Personnalisation clinique</p>
+                    <h3>Numa s’adapte à la façon de travailler de chaque vétérinaire.</h3>
+                    <p>La clinique peut choisir le ton, les horaires, les seuils d’alerte, les messages autorisés, les validations humaines et les limites exactes de chaque protocole.</p>
+                    <button class="button button-forest" type="button" data-open-numa-settings>Modifier le cadre de Numa</button>
+                  </div>
+                  <div class="numa-setting-chips">
+                    <span>Ton propriétaire</span><span>Horaires d’envoi</span><span>Canal WhatsApp</span><span>Seuils d’alerte</span><span>Validation humaine</span><span>Liens RDV</span><span>Avis Google</span><span>Documents joints</span><span>Relances max</span><span>Cas bloqués</span>
+                  </div>
+                </div>
+                <div class="programme-live-card numa-frame-current" id="numa-frame-current" aria-live="polite"></div>
+              </section>
+            </div>
+          </section>
+          <header class="page-header">
+            <div><p class="eyebrow">Pilotage de Numa</p><h1 id="numa-title">Le centre de contrôle propriétaire.</h1><p>Gardez trois choses visibles : ce que Numa peut envoyer, ce qu’elle surveille, et ce que la clinique doit valider.</p></div>
+            <div class="numa-presence">
+              <div class="numa-portrait"><img src="assets/numa-avatar-professional.png" alt="Portrait fictif de Numa" /></div>
+              <div><span class="assistant-badge"><span>✦</span> Cadre validé pour le <b id="specialty-label">suivi vétérinaire</b></span><small>Assistant IA fictif · ne remplace jamais un vétérinaire</small></div>
+            </div>
+          </header>
+          <section class="numa-command-strip numa-command-strip-compact" aria-label="Résumé du pilotage de Numa">
+            <article><span>01</span><strong>Envoyer le suivi</strong><small>Messages WhatsApp, QCM, rappels et documents déjà validés par vos protocoles.</small></article>
+            <article><span>02</span><strong>Surveiller les signaux</strong><small>Silence, inquiétude, demande de rappel, appétit, plaie ou suivi à clôturer.</small></article>
+            <article><span>03</span><strong>Faire valider</strong><small>Cas sensibles, réponse libre, rendez-vous et nouvelle règle restent côté clinique.</small></article>
+          </section>
+          <section class="panel vet-agent-studio" aria-labelledby="vet-agent-studio-title">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Vet Agent Studio</p>
+                <h2 id="vet-agent-studio-title">Simuler les automatisations IA avant de les brancher.</h2>
+                <p>Chaque scénario produit une action locale : brouillon, tâche, alerte ou prochain pas. Les décisions cliniques et les envois externes restent toujours à valider.</p>
+              </div>
+              <span class="tag tag-forest">Mode démo</span>
+            </div>
+            <div class="vet-agent-scenarios" aria-label="Scénarios IA vétérinaires">
+              <button type="button" data-vet-scenario="booking"><span>01</span><strong>Prise de RDV</strong><small>demande site, WhatsApp ou appel</small></button>
+              <button type="button" data-vet-scenario="triage"><span>02</span><strong>Triage prudent</strong><small>signaux urgents → humain</small></button>
+              <button type="button" data-vet-scenario="postop"><span>03</span><strong>Post-op intelligent</strong><small>QCM + alerte complication</small></button>
+              <button type="button" data-vet-scenario="vaccine"><span>04</span><strong>Rappel vaccin</strong><small>J-30, J-7, J-2</small></button>
+              <button type="button" data-vet-scenario="refill"><span>05</span><strong>Demande ordonnance</strong><small>tâche vétérinaire, pas d’accord auto</small></button>
+              <button type="button" data-vet-scenario="noshow"><span>06</span><strong>No-show</strong><small>relance douce + liste d’attente</small></button>
+              <button type="button" data-vet-scenario="owner-report"><span>07</span><strong>Rapport propriétaire</strong><small>résumé mensuel non médical</small></button>
+              <button type="button" data-vet-scenario="scribe"><span>08</span><strong>Copilote consultation</strong><small>note SOAP brouillon à valider</small></button>
+            </div>
+            <div class="vet-agent-result" id="vet-agent-result" aria-live="polite">
+              <span class="vet-agent-result-icon" aria-hidden="true">✦</span>
+              <div>
+                <strong>Sélectionnez un scénario.</strong>
+                <p>Strivea Vet affichera le workflow préparé, les limites IA et les intégrations nécessaires pour le rendre réel.</p>
+              </div>
+            </div>
+          </section>
+          <div class="numa-layout">
+            <section class="panel numa-workspace">
+              <div class="patient-strip"><span class="person-initials">NA</span><div><strong>Nala · Claire Martin</strong><small>Protocole « Post-stérilisation » · J+1</small></div><button type="button" data-route="messages">Voir l’échange →</button></div>
+              <div class="numa-prompt">
+                <label for="numa-input">Ajouter une règle à Numa</label>
+                <textarea id="numa-input" rows="4" placeholder="Ex. Si le propriétaire signale une plaie rouge ou un refus de manger, créer une alerte clinique. Ne jamais interpréter médicalement."></textarea>
+                <div class="prompt-footer"><span>Numa ne pourra l’appliquer qu’après votre validation.</span><button class="button button-forest" id="run-numa" type="button">Préparer la règle <span aria-hidden="true">✦</span></button></div>
+              </div>
+              <div class="quick-actions">
+                <button type="button" data-ai-action="summary"><span>⌁</span> Voir le cadre de Numa</button>
+                <button type="button" data-ai-action="reply"><span>◌</span> Préparer un message J+1</button>
+                <button type="button" data-ai-action="callback"><span>↗</span> Configurer une alerte clinique</button>
+                <button type="button" data-ai-action="doctolib"><span>□</span> Ce qui peut partir seul</button>
+                <button type="button" data-route="signature" data-signature-link><span>✦</span> Lancer Suivi Signature pour Nala</button>
+                <button type="button" data-continuity-action="review" data-continuity-patient="Nala"><span>◷</span> Radar de Continuité</button>
+              </div>
+            </section>
+            <aside class="panel numa-result" aria-live="polite">
+              <div class="panel-heading"><div><p class="eyebrow">Règle Numa</p><h2>À valider par vous</h2></div><span class="tag tag-sage">Sans conclusion clinique</span></div>
+              <div id="numa-output">
+                <p class="result-label">Règle actuellement proposée</p>
+                <h3>Après un point J+1, transmettre les signaux sans conclure.</h3>
+                <p>Numa peut proposer un QCM bref, recueillir une demande de rappel et transmettre la réponse à l’équipe. Elle ne répond pas à la place du vétérinaire sur une question médicale.</p>
+                <div class="result-box"><strong>Message propriétaire validé</strong><p>« Bonjour Claire, voici un bref point de suivi pour Nala. Si vous êtes inquiète ou souhaitez être rappelée, dites-le-nous simplement. »</p></div>
+              </div>
+              <div class="result-actions"><button class="button button-forest" type="button" data-toast="Règle ajoutée à Numa dans cette démonstration.">Ajouter à Numa</button><button class="quiet-button" type="button" data-route="messages">Voir l’échange propriétaire</button></div>
+            </aside>
+          </div>
+          <section class="panel continuity-radar" aria-labelledby="continuity-title">
+            <div class="continuity-head">
+              <div>
+                <p class="eyebrow">Radar de Continuité</p>
+                <h2 id="continuity-title">Les propriétaires à ne pas laisser sans suite.</h2>
+                <p>Numa repère les suivis sans suite claire. L’assistant clinique prépare l’action, mais la clinique garde la validation avant tout message ou lien.</p>
+              </div>
+              <div class="continuity-score" aria-label="Animaux repérés">
+                <strong>3</strong>
+                <span>points à sécuriser</span>
+              </div>
+            </div>
+            <div class="continuity-grid">
+              <article class="continuity-card is-priority">
+                <div class="continuity-card-top"><span class="person-initials">NA</span><div><strong>Nala</strong><small>J+1 · post-stérilisation</small></div><span class="tag tag-amber">À relire</span></div>
+                <p>Claire signale une inquiétude et aucune suite n’est encore validée.</p>
+                <div class="continuity-actions">
+                  <button type="button" data-continuity-action="callback" data-continuity-patient="Nala">Créer une tâche rappel</button>
+                  <button type="button" data-continuity-action="doctolib" data-continuity-patient="Nala">Préparer RDV</button>
+                </div>
+              </article>
+              <article class="continuity-card">
+                <div class="continuity-card-top"><span class="person-initials person-soft">OS</span><div><strong>Oslo</strong><small>J+5 · chirurgie orthopédique</small></div><span class="tag tag-sand">Silence</span></div>
+                <p>N’a pas répondu au QCM prévu. Une relance douce peut être préparée.</p>
+                <div class="continuity-actions">
+                  <button type="button" data-continuity-action="reminder" data-continuity-patient="Oslo">Relance douce</button>
+                  <button type="button" data-continuity-action="close" data-continuity-patient="Oslo">Clôture propre</button>
+                </div>
+              </article>
+              <article class="continuity-card">
+                <div class="continuity-card-top"><span class="person-initials person-blue">MO</span><div><strong>Moka</strong><small>Suivi chronique · diabète félin</small></div><span class="tag tag-sage">À orienter</span></div>
+                <p>Suivi stable, mais aucun prochain contrôle n’est indiqué.</p>
+                <div class="continuity-actions">
+                  <button type="button" data-continuity-action="qcm" data-continuity-patient="Moka">Mini point final</button>
+                  <button type="button" data-continuity-action="review" data-continuity-patient="Moka">Demande d’avis</button>
+                </div>
+              </article>
+            </div>
+            <div class="continuity-summary" id="continuity-summary" aria-live="polite">
+              <span aria-hidden="true">⌁</span>
+              <p><strong>Action recommandée :</strong> commencez par Nala. Le radar ne conclut rien médicalement, il signale seulement une continuité de parcours à sécuriser.</p>
+            </div>
+          </section>
+          <details class="numa-advanced-settings" id="numa-advanced-settings">
+            <summary><span>Réglages avancés de Numa</span><small>Cadre, autonomie, alertes et garde-fous de la clinique</small></summary>
+          <section class="numa-control-deck" aria-labelledby="numa-control-title">
+            <div class="numa-control-heading">
+              <div><p class="eyebrow">Réglages Numa</p><h2 id="numa-control-title">Cadre, autonomie et alertes.</h2></div>
+              <p>Ces règles s’appliquent à tous les protocoles. Le vétérinaire garde la main sur les messages sensibles et les décisions de soin.</p>
+            </div>
+            <section class="panel configuration-card" id="appointment-rule">
+              <p class="eyebrow">Suivi entre les visites</p><h2>Alerte clinique et rendez-vous</h2>
+              <label class="switch-row"><span><strong>Signaler un rendez-vous à évaluer</strong><small>Numa remonte les signaux selon les règles validées par le vétérinaire.</small></span><input id="appointment-alert-enabled" type="checkbox" checked /><i></i></label>
+              <label for="appointment-trigger">Situations à transmettre à la clinique</label><textarea id="appointment-trigger" rows="3">Le propriétaire signale une léthargie anormale, un refus de manger, une plaie rouge ou suintante, des vomissements répétés ou demande un avis de la clinique.</textarea>
+              <p class="field-help">Le vétérinaire décide de la suite. Une urgence potentielle déclenche les consignes d’urgence vétérinaire sans attendre un rendez-vous.</p>
+              <button id="simulate-appointment-alert" type="button" class="button button-forest">Tester avec un échange fictif</button>
+              <div id="appointment-alert-result" hidden aria-live="polite"></div>
+            </section>
+            <section class="config-grid">
+              <article class="panel configuration-card">
+                <p class="eyebrow">Votre clinique</p><h2>Le cadre de Numa</h2>
+                <label for="cabinet-name">Nom de la clinique</label><input id="cabinet-name" type="text" value="Clinique Laurent Vet" />
+                <label for="practitioner-name">Vétérinaire référent</label><input id="practitioner-name" type="text" value="Dr Emma Laurent" />
+                <label for="specialty-select">Spécialité de la clinique</label><select id="specialty-select"><option>Médecine vétérinaire</option></select>
+                <label for="tone-select">Ton des messages</label><select id="tone-select"><option>Chaleureux et rassurant</option><option>Simple et direct</option><option>Très concis</option></select>
+                <div class="programme-fields">
+                  <label for="whatsapp-number">WhatsApp clinique<input id="whatsapp-number" type="tel" value="+33 6 00 00 00 00" /></label>
+                  <label for="send-window">Plage d’envoi<select id="send-window"><option>9h-19h · jours ouvrés</option><option>8h-20h · jours ouvrés</option><option>9h-18h · lundi au samedi</option><option>Manuel uniquement</option></select></label>
+                </div>
+                <label for="strivea-link">Lien personnel Strivea Vet</label><input id="strivea-link" type="url" value="https://strivea.demo/vet/suivi/nala" />
+                <label for="cabinet-google-link">Lien avis Google</label><input id="cabinet-google-link" type="url" value="https://g.page/r/CliniqueLaurentVetDemo/review" />
+                <div class="programme-live-card" id="cabinet-live-preview" aria-live="polite"></div>
+                <button class="button button-forest" id="save-programme" type="button">Enregistrer le cadre</button>
+              </article>
+              <article class="panel configuration-card">
+                <p class="eyebrow">Adaptation fine</p><h2>Paramètres que le vétérinaire contrôle</h2>
+                <label for="numa-profile-mode">Profil de Numa</label><select id="numa-profile-mode"><option>Très rassurant · beaucoup d’explications</option><option>Équilibré · clair et humain</option><option>Très concis · minimum de messages</option></select>
+                <label for="numa-alert-threshold">Sensibilité des alertes</label><select id="numa-alert-threshold"><option>Standard · seulement les écarts importants</option><option>Prudent · plus de signaux à relire</option><option>Strict · presque tout revient à l’équipe</option></select>
+                <label for="numa-followup-style">Style de suivi</label><select id="numa-followup-style"><option>Post-opératoire</option><option>Vaccins et rappels</option><option>Suivi chronique</option><option>Comportement / nutrition</option><option>Parcours personnalisé</option></select>
+                <div class="numa-setting-switches">
+                  <label class="switch-row"><span><strong>Autoriser les questions libres</strong><small>Numa recueille la question puis la transmet si elle dépasse le protocole.</small></span><input id="numa-free-questions" type="checkbox" checked /><i></i></label>
+                  <label class="switch-row"><span><strong>Limiter les messages hors horaires</strong><small>Aucun message non urgent en dehors de la plage choisie.</small></span><input id="numa-hours-limit" type="checkbox" checked /><i></i></label>
+                  <label class="switch-row"><span><strong>Exiger validation avant lien RDV</strong><small>Le lien est préparé, mais l’équipe confirme avant proposition.</small></span><input id="numa-rdv-validation" type="checkbox" checked /><i></i></label>
+                </div>
+                <div class="programme-live-card" id="numa-frame-live-preview" aria-live="polite"></div>
+                <button class="button button-outline" id="save-numa-frame-config" type="button">Enregistrer ces paramètres</button>
+              </article>
+              <article class="panel configuration-card">
+                <p class="eyebrow">Niveau d’autonomie</p><h2>Ce qui peut partir seul</h2>
+                <label class="switch-row"><span><strong>Rappels et QCM validés</strong><small>Uniquement les contenus de ce protocole.</small></span><input id="auto-reminders" type="checkbox" checked /><i></i></label>
+                <label class="switch-row"><span><strong>Proposer le lien de rendez-vous</strong><small>Doctolib Vet, Vetstoria ou lien direct, seulement selon règle validée.</small></span><input id="auto-doctolib" type="checkbox" checked /><i></i></label>
+                <label class="switch-row"><span><strong>Demander un avis Google</strong><small>Après J0, uniquement si le protocole le prévoit.</small></span><input id="auto-review" type="checkbox" checked /><i></i></label>
+                <label class="switch-row"><span><strong>Réponses libres</strong><small>Le propriétaire peut écrire librement, mais l’équipe relit avant décision.</small></span><input id="free-response-review" type="checkbox" checked /><i></i></label>
+                <label for="human-review-level">Validation humaine</label><select id="human-review-level"><option value="balanced">Équilibrée · relire les cas sensibles</option><option value="strict">Stricte · relire avant tout envoi non prévu</option><option value="manual">Manuelle · Numa prépare seulement</option></select>
+                <label for="max-followups">Nombre maximum de relances automatiques</label><input id="max-followups" type="number" min="0" max="6" value="2" />
+                <div class="programme-live-card autonomy-score" id="autonomy-live-preview" aria-live="polite"></div>
+                <button class="button button-outline" id="save-autonomy-config" type="button">Enregistrer l’autonomie</button>
+              </article>
+              <article class="panel configuration-card configuration-wide">
+                <p class="eyebrow">Déclencheurs & protection</p><h2>Les garde-fous de Numa</h2>
+                <div class="guardrails"><div><strong>Propriétaire souhaite un rendez-vous</strong><p>Proposer le lien de rendez-vous configuré.</p></div><div><strong>Propriétaire demande un rappel</strong><p>Créer une tâche à l’équipe ; pas de promesse de délai automatisée.</p></div><div><strong>Réponse à consulter</strong><p>Notifier l’équipe et attendre sa relecture.</p></div><div><strong>Signal potentiellement urgent</strong><p>Stopper l’échange automatisé et présenter les consignes d’urgence vétérinaire.</p></div></div>
+                <div class="form-actions"><button class="button button-forest" id="save-full-numa-frame" type="button">Enregistrer tout le cadre de Numa</button><button class="button button-outline" type="button" data-open-numa-settings>Modifier encore</button></div>
+              </article>
+            </section>
+          </section>
+          </details>
+          <section class="panel numa-boundary"><span aria-hidden="true">⌁</span><div><strong>Numa accompagne le propriétaire ; l’assistant clinique accompagne l’équipe.</strong><p>Numa applique les protocoles, messages, QCM et liens validés par le vétérinaire. Elle ne pose pas de diagnostic, ne recommande pas de traitement, ne conclut pas cliniquement et stoppe l’automatisation si une situation peut nécessiter une prise en charge urgente.</p></div></section>
+        </section>
+
+        <section class="app-view" id="view-programme" aria-labelledby="programme-title">
+          <header class="page-header">
+            <div><p class="eyebrow">Protocoles vétérinaires</p><h1 id="programme-title">Vos parcours post-visite.</h1><p>Créez les étapes, messages, QCM et documents utilisés après une intervention, une chirurgie ou un suivi chronique. Les règles globales de Numa sont maintenant dans la page Numa.</p></div>
+            <span class="program-status"><i></i> 5 protocoles prêts · 14 animaux</span>
+          </header>
+          <section class="panel protocol-ai-builder" aria-labelledby="protocol-ai-title">
+            <div class="protocol-ai-copy">
+              <p class="eyebrow">Numa · création de protocole</p>
+              <h2 id="protocol-ai-title">Construire un protocole avec le vétérinaire.</h2>
+              <p>Décrivez une intervention, une pathologie ou un suivi type. Numa propose une structure J0/J+1/J+3/J+7, les messages, les QCM et les garde-fous. Le vétérinaire garde la main avant publication.</p>
+              <div class="protocol-ai-presets">
+                <button type="button" data-protocol-ai-prompt="Crée un protocole post-détartrage avec surveillance alimentation, douleur apparente, saignement et message de clôture.">Détartrage</button>
+                <button type="button" data-protocol-ai-prompt="Crée un protocole post-chirurgie orthopédique avec repos strict, pansement, appui, relance J+3 et contrôle.">Orthopédie</button>
+                <button type="button" data-protocol-ai-prompt="Crée un protocole de suivi vaccinal avec réaction éventuelle, rappel annuel et avis facultatif si tout va bien.">Vaccin</button>
+              </div>
+              <form class="protocol-ai-form" id="protocol-ai-form">
+                <label class="sr-only" for="protocol-ai-input">Demander à Numa de construire un protocole</label>
+                <textarea id="protocol-ai-input" rows="3" placeholder="Ex. crée un protocole post-extraction dentaire : alimentation molle, surveillance saignement, QCM J+1, contrôle si gêne…"></textarea>
+                <button class="button button-forest" type="submit">Demander une proposition</button>
+              </form>
+            </div>
+            <aside class="protocol-ai-output" id="protocol-ai-output" aria-live="polite">
+              <div class="protocol-ai-output-head"><span aria-hidden="true">✦</span><strong>Proposition Numa</strong></div>
+              <p>Décrivez le protocole souhaité. Numa préparera une base structurée, avec messages et limites à valider.</p>
+              <ol>
+                <li>J0 · consignes validées par la clinique</li>
+                <li>J+1 · QCM propriétaire</li>
+                <li>J+3/J+7 · relance ou contrôle selon le cas</li>
+              </ol>
+              <button class="button button-outline" id="protocol-ai-use" type="button">Utiliser comme base</button>
+            </aside>
+          </section>
+          <div class="programme-layout">
+            <section class="panel timeline-panel">
+              <div class="panel-heading"><div><p class="eyebrow">Protocole post-stérilisation</p><h2>Une conversation de convalescence</h2></div><button class="quiet-button" type="button" data-toast="Une nouvelle étape peut être préparée dans la version complète.">+ Ajouter une étape</button></div>
+              <div class="timeline">
+                <article class="timeline-item"><div class="timeline-date"><span>J0</span><i></i></div><div class="timeline-content"><p class="eyebrow">Retour à domicile</p><h3>Rassurer le propriétaire.</h3><p>Rappelle le calme, la collerette et le cadre : Numa ne remplace pas la clinique.</p><div class="timeline-tags"><span>WhatsApp</span><span>Automatique après consentement</span></div></div><button class="icon-button" type="button" data-toast="Étape J0 sélectionnée." aria-label="Modifier l'étape J0">⋯</button></article>
+                <article class="timeline-item"><div class="timeline-date"><span>J+1</span><i></i></div><div class="timeline-content"><p class="eyebrow">QCM simple</p><h3>Appétit, énergie, plaie.</h3><p>Pose des questions fermées et remonte les réponses inquiétantes à l’équipe.</p><div class="timeline-tags"><span>QCM</span><span>Réponse libre à relire</span></div></div><button class="icon-button" type="button" data-toast="Étape J+1 sélectionnée." aria-label="Modifier l'étape J+1">⋯</button></article>
+                <article class="timeline-item"><div class="timeline-date"><span>J+7</span><i></i></div><div class="timeline-content"><p class="eyebrow">Contrôle & prochain pas</p><h3>Préparer le contrôle si besoin.</h3><p>Rappel du contrôle ou retrait des points, puis lien de rendez-vous si la règle le prévoit.</p><div class="timeline-tags"><span>WhatsApp</span><span>RDV selon la règle</span></div></div><button class="icon-button" type="button" data-toast="Étape J+7 sélectionnée." aria-label="Modifier l'étape J+7">⋯</button></article>
+              </div>
+            </section>
+            <aside class="panel program-preview">
+              <p class="eyebrow">Aperçu de la conversation propriétaire</p>
+              <div class="preview-phone">
+                <div class="preview-phone-head"><img src="assets/strivea-logo.png" alt="" /><strong>Numa · Clinique Laurent Vet</strong></div>
+                <div class="preview-bubble">Bonjour Claire, je suis Numa, l’IA de suivi de la clinique du <span id="preview-practitioner">Dr Emma Laurent</span>. J’applique le protocole préparé par votre vétérinaire pour Nala. Voici votre espace sécurisé : <a id="strivea-preview" href="https://strivea.demo/vet/suivi/nala" target="_blank" rel="noreferrer">ouvrir mon espace</a>.</div>
+                <div class="preview-bubble">À tout moment, vous pouvez demander à être rappelé·e par l’équipe.</div>
+                <div class="patient-space-preview">
+                  <div><span class="patient-space-icon" aria-hidden="true">✓</span><span><strong>Espace propriétaire</strong><small>Un geste simple après la visite</small></span></div>
+                  <p>Une fois la visite terminée, le propriétaire peut confirmer le retour à domicile. Cela informe l’équipe, sans conclusion médicale automatique.</p>
+                  <button class="patient-completion-button" id="consultation-complete" type="button">Le retour à domicile est confirmé <span aria-hidden="true">→</span></button>
+                  <small id="consultation-complete-status">La confirmation reste visible à la clinique.</small>
+                </div>
+              </div>
+              <p class="mini-note">Pas de détail sensible dans WhatsApp. Le lien dirige vers l’espace sécurisé Strivea Vet.</p>
+            </aside>
+          </div>
+          <section class="panel configuration-card" id="protocol-resources">
+            <p class="eyebrow">Documents vétérinaires</p><h2>Les références de ce protocole</h2>
+            <p>Ajoutez vos consignes de convalescence, documents post-opératoires, fiches médicaments et documents de référence. Ils restent enregistrés dans cette page et pourront être joints à vos protocoles.</p>
+            <div class="programme-fields programme-fields-three">
+              <label for="protocol-document-category">Type par défaut<select id="protocol-document-category"><option>Consignes de convalescence</option><option>Rappel médicament</option><option>Questionnaire propriétaire</option><option>Document administratif</option><option>Référence interne</option></select></label>
+              <label for="protocol-document-visibility">Visibilité<select id="protocol-document-visibility"><option value="patient">Visible par le propriétaire</option><option value="team">Clinique uniquement</option></select></label>
+              <label for="protocol-document-search">Rechercher<input id="protocol-document-search" type="search" placeholder="Nom, type, statut…" /></label>
+            </div>
+            <div class="protocol-upload-stack">
+              <label class="protocol-file-import protocol-file-import-page" id="protocol-dropzone" for="protocol-files" role="button" tabindex="0" aria-describedby="protocol-upload-feedback">
+                <span class="protocol-file-plus" id="protocol-file-plus" role="button" aria-label="Ajouter des fichiers">+</span>
+                <span>Ajouter des fichiers</span>
+                <strong>Choisir des documents sur l’ordinateur</strong>
+                <small>PDF, Word, texte ou image · 10 Mo maximum.</small>
+              </label>
+              <input class="protocol-file-native" id="protocol-files" type="file" multiple accept=".pdf,.doc,.docx,.txt,image/*" aria-hidden="true" tabindex="-1" />
+              <p class="field-help" id="protocol-upload-feedback">Les fichiers importés seront enregistrés juste en dessous et pourront ensuite être joints à vos protocoles.</p>
+              <div id="protocol-file-list" aria-live="polite"><p>Aucun document ajouté.</p></div>
+            </div>
+            <div class="programme-summary-grid" id="protocol-document-summary" aria-label="Résumé des documents"></div>
+            <label for="protocol-notes">Consignes que Numa doit respecter</label><textarea id="protocol-notes" rows="3" placeholder="Reprendre uniquement les consignes validées par le vétérinaire…"></textarea>
+            <div class="form-actions"><button class="button button-forest" id="save-document-config" type="button">Enregistrer les réglages</button><button class="button button-outline" id="copy-document-summary" type="button">Copier le résumé clinique</button><button class="quiet-button" id="clear-protocol-documents" type="button">Tout retirer</button></div>
+            <p id="protocol-document-status" class="field-help" role="status">Le résumé clinique sert uniquement à coller la liste des documents et consignes dans une note interne. Rien n’est envoyé au propriétaire sans validation.</p>
+          </section>
+        </section>
+
+        <section class="app-view" id="view-launch" aria-labelledby="launch-title">
+          <header class="page-header">
+            <div><p class="eyebrow">Lancement · plan de mise en œuvre</p><h1 id="launch-title">Chaque jour, une étape pour rendre Strivea Vet opérationnel.</h1><p>Un plan concret pour revoir l’interface, structurer les comptes clinique et propriétaires, préparer les données puis brancher les services avant un pilote réel.</p></div>
+            <span class="program-status"><i></i> Démo structurée · à finaliser</span>
+          </header>
+          <section class="panel launch-overview">
+            <div><p class="eyebrow">Avancement</p><h2><strong id="launch-complete-count">4</strong> actions prêtes sur <span id="launch-total-count">12</span></h2><p id="launch-progress-copy">8 éléments restent à vérifier avant un vrai lancement.</p></div>
+            <div class="launch-overview-steps" aria-label="Étapes de mise en route"><span class="is-ready">1. Cadre</span><span class="is-ready">2. Canal</span><span>3. Tests</span><span>4. Lancement</span></div>
+          </section>
+          <section class="panel launch-day-plan" aria-labelledby="launch-day-plan-title">
+            <div class="panel-heading"><div><p class="eyebrow">Votre cadence</p><h2 id="launch-day-plan-title">Le plan d’action, jour après jour</h2></div><span class="tag tag-forest">28 jours recommandés</span></div>
+            <div class="launch-days">
+              <article class="launch-day-card is-current"><span>J1 → J7</span><h3>Revoir les écrans</h3><p>Une page par jour : Vitrine, Aujourd’hui, Animaux, Numa, Protocoles, Cadre et Profil. Cette page de lancement est exclue.</p><small>Objectif : valider les textes, les actions et les écrans.</small></article>
+              <article class="launch-day-card"><span>J9 → J15</span><h3>Créer les comptes</h3><p>Définissez la clinique comme compte client, les rôles de l’équipe, les propriétaires associés aux animaux et le consentement.</p><small>Objectif : isoler les données d’une clinique à l’autre.</small></article>
+              <article class="launch-day-card"><span>J16 → J21</span><h3>Préparer les connecteurs</h3><p>Rassemblez les accès Stripe, WhatsApp Business, e-mail, outil de RDV et supervision.</p><small>Objectif : aucune clé sensible dans le navigateur.</small></article>
+              <article class="launch-day-card"><span>J22 → J25</span><h3>Tester le parcours</h3><p>Testez consentement, signal vétérinaire, rappel, lien de rendez-vous et retour à domicile.</p><small>Objectif : vérifier les cas normaux et les garde-fous.</small></article>
+              <article class="launch-day-card"><span>J26 → J28</span><h3>Lancer un pilote</h3><p>Ouvrez Strivea Vet à une seule clinique pilote, avec un suivi humain rapproché.</p><small>Objectif : apprendre avant de généraliser.</small></article>
+            </div>
+          </section>
+          <section class="panel launch-review-panel" aria-labelledby="launch-review-title">
+            <div class="panel-heading"><div><p class="eyebrow">Jour 1 · revue des écrans</p><h2 id="launch-review-title">Revoir chaque page, sauf le plan de lancement</h2><p id="launch-review-copy">0 page revue sur 7. Ouvrez une page, vérifiez-la, puis marquez-la comme revue.</p></div><span class="tag tag-sand"><strong id="launch-review-count">0</strong>&nbsp;/&nbsp;7 revues</span></div>
+            <div class="launch-review-grid">
+              <article class="launch-review-item" data-review-item="vitrine"><span class="launch-review-number">J1</span><div><strong>Vitrine</strong><small>Promesse, Numa, navigation, tarifs et cadre.</small></div><button class="quiet-button" type="button" data-review-open="vitrine">Ouvrir →</button><button class="launch-review-check" type="button" data-launch-review="vitrine" aria-pressed="false" aria-label="Marquer la vitrine comme revue">✓</button></article>
+              <article class="launch-review-item" data-review-item="today"><span class="launch-review-number">J2</span><div><strong>Aujourd’hui</strong><small>Priorités, alertes clinique et raccourcis.</small></div><button class="quiet-button" type="button" data-review-open="today">Ouvrir →</button><button class="launch-review-check" type="button" data-launch-review="today" aria-pressed="false" aria-label="Marquer Aujourd’hui comme revue">✓</button></article>
+              <article class="launch-review-item" data-review-item="messages"><span class="launch-review-number">J3</span><div><strong>Animaux</strong><small>Relecture humaine, signal et brouillons propriétaires.</small></div><button class="quiet-button" type="button" data-review-open="messages">Ouvrir →</button><button class="launch-review-check" type="button" data-launch-review="messages" aria-pressed="false" aria-label="Marquer Animaux comme revue">✓</button></article>
+              <article class="launch-review-item" data-review-item="numa"><span class="launch-review-number">J4</span><div><strong>Numa</strong><small>Protocoles, limites et validation vétérinaire.</small></div><button class="quiet-button" type="button" data-review-open="numa">Ouvrir →</button><button class="launch-review-check" type="button" data-launch-review="numa" aria-pressed="false" aria-label="Marquer Numa comme revue">✓</button></article>
+              <article class="launch-review-item" data-review-item="programme"><span class="launch-review-number">J5</span><div><strong>Protocoles</strong><small>Étapes, QCM, délais et déclencheurs.</small></div><button class="quiet-button" type="button" data-review-open="programme">Ouvrir →</button><button class="launch-review-check" type="button" data-launch-review="programme" aria-pressed="false" aria-label="Marquer Protocoles comme revue">✓</button></article>
+              <article class="launch-review-item" data-review-item="urgent"><span class="launch-review-number">J6</span><div><strong>Cadre</strong><small>Consignes, mentions et garde-fous.</small></div><button class="quiet-button" type="button" data-review-open="urgent">Ouvrir →</button><button class="launch-review-check" type="button" data-launch-review="urgent" aria-pressed="false" aria-label="Marquer Cadre comme revue">✓</button></article>
+              <article class="launch-review-item" data-review-item="profile"><span class="launch-review-number">J7</span><div><strong>Profil</strong><small>Clinique, équipe, apparence et accès.</small></div><button class="quiet-button" type="button" data-review-open="profile">Ouvrir →</button><button class="launch-review-check" type="button" data-launch-review="profile" aria-pressed="false" aria-label="Marquer Profil comme revue">✓</button></article>
+            </div>
+          </section>
+          <section class="panel launch-data-foundation" aria-labelledby="launch-data-title">
+            <div class="panel-heading"><div><p class="eyebrow">Jour 2 · comptes & données</p><h2 id="launch-data-title">Un client = une clinique, avec ses comptes isolés</h2><p>La bonne base n’est pas un simple fichier d’animaux : chaque clinique devient une organisation distincte, avec ses vétérinaires, ses ASV, ses propriétaires, ses animaux, ses consentements et son journal d’accès.</p></div><span class="tag tag-amber">À construire</span></div>
+            <div class="launch-data-model" aria-label="Architecture de données recommandée">
+              <article><span>01</span><div><strong>Organisation</strong><small>Le compte client : clinique, abonnement Stripe, préférences et numéro WhatsApp.</small></div></article>
+              <article><span>02</span><div><strong>Utilisateurs & rôles</strong><small>Vétérinaire, ASV, administrateur : droits limités selon le rôle.</small></div></article>
+              <article><span>03</span><div><strong>Propriétaires & consentements</strong><small>Contact propriétaire sécurisé, consentement daté, retrait et historique des accès.</small></div></article>
+              <article><span>04</span><div><strong>Animaux & parcours</strong><small>Protocoles, messages, signaux, rendez-vous et événements rattachés à la bonne clinique.</small></div></article>
+            </div>
+            <div class="launch-data-note"><span aria-hidden="true">⌁</span><p><strong>Avant une vraie base de données :</strong> définir le modèle multi-clinique, l’authentification, le chiffrement, les sauvegardes et l’hébergement adapté aux données concernées. Aucune donnée réelle ne doit être testée dans ce prototype.</p></div>
+          </section>
+          <section class="panel launch-integrations" aria-labelledby="launch-integrations-title">
+            <div class="panel-heading"><div><p class="eyebrow">Jour 3 · services à relier</p><h2 id="launch-integrations-title">Préparer les connecteurs sans exposer les données</h2><p>Les boutons ci-dessous simulent une préparation. Ils ne connectent aucun service réel et ne transmettent aucune donnée.</p></div><span class="tag tag-sand">Accès à prévoir</span></div>
+            <div class="integration-grid">
+              <article class="integration-card" data-integration-card="stripe"><span class="integration-icon" aria-hidden="true">¤</span><div><strong>Stripe</strong><small>Abonnements, factures et webhooks de paiement.</small></div><span class="tag tag-sand" id="integration-status-stripe">À préparer</span><button class="button button-outline" type="button" data-integration="stripe">Préparer</button></article>
+              <article class="integration-card" data-integration-card="whatsapp"><span class="integration-icon" aria-hidden="true">◌</span><div><strong>WhatsApp Business</strong><small>Compte Meta, modèles validés, consentement et webhooks.</small></div><span class="tag tag-sand" id="integration-status-whatsapp">À préparer</span><button class="button button-outline" type="button" data-integration="whatsapp">Préparer</button></article>
+              <article class="integration-card" data-integration-card="email"><span class="integration-icon" aria-hidden="true">✉</span><div><strong>E-mail transactionnel</strong><small>Invitations, sécurité de compte et alertes d’équipe.</small></div><span class="tag tag-sand" id="integration-status-email">À préparer</span><button class="button button-outline" type="button" data-integration="email">Préparer</button></article>
+              <article class="integration-card" data-integration-card="data"><span class="integration-icon" aria-hidden="true">▣</span><div><strong>Base & authentification</strong><small>Comptes par clinique, rôles, audit et données isolées.</small></div><span class="tag tag-sand" id="integration-status-data">À définir</span><button class="button button-outline" type="button" data-integration="data">Préparer</button></article>
+              <article class="integration-card" data-integration-card="monitoring"><span class="integration-icon" aria-hidden="true">◔</span><div><strong>Supervision</strong><small>Erreurs, disponibilité, sauvegardes et traces d’accès.</small></div><span class="tag tag-sand" id="integration-status-monitoring">À préparer</span><button class="button button-outline" type="button" data-integration="monitoring">Préparer</button></article>
+            </div>
+          </section>
+          <section class="panel production-map" aria-labelledby="production-map-title">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Rendre Strivea Vet fonctionnel</p>
+                <h2 id="production-map-title">Les briques obligatoires pour passer du prototype au SaaS réel.</h2>
+                <p>Cette checklist transforme la démo en produit vendable : base multi-clinique, WhatsApp réel, calendrier, IA encadrée, paiements, audit et supervision.</p>
+              </div>
+              <span class="tag tag-forest"><strong id="production-check-count">0</strong>&nbsp;/&nbsp;10 prêts</span>
+            </div>
+            <div class="production-checklist">
+              <label><input type="checkbox" data-production-check /> <span><strong>Base de données multi-clinique</strong><small>Clinique, équipe, propriétaires, animaux, consentements, protocoles et messages isolés par organisation.</small></span></label>
+              <label><input type="checkbox" data-production-check /> <span><strong>Authentification & rôles</strong><small>Admin, vétérinaire, ASV, gérant ; droits stricts et journal des accès.</small></span></label>
+              <label><input type="checkbox" data-production-check /> <span><strong>WhatsApp Business API</strong><small>Templates Meta validés, webhooks entrants, opt-in, STOP et limites d’envoi.</small></span></label>
+              <label><input type="checkbox" data-production-check /> <span><strong>Agenda réel</strong><small>Google Calendar, Doctolib synchronisé, Vetstoria ou autre outil RDV avec anti-conflit.</small></span></label>
+              <label><input type="checkbox" data-production-check /> <span><strong>IA sécurisée</strong><small>Prompts système, RAG sur protocoles, logs, score de confiance, blocage diagnostic/traitement.</small></span></label>
+              <label><input type="checkbox" data-production-check /> <span><strong>Relances & règles Numa</strong><small>Rappels vaccins, RDV, post-op, no-show, avis Google et réactivation patientèle.</small></span></label>
+              <label><input type="checkbox" data-production-check /> <span><strong>Paiement & abonnement</strong><small>Stripe, plans Démo/Cabinet, facturation, webhooks et suspension propre.</small></span></label>
+              <label><input type="checkbox" data-production-check /> <span><strong>Import CSV</strong><small>Clients, animaux, vaccins, historiques simples, rapport d’erreur et doublons.</small></span></label>
+              <label><input type="checkbox" data-production-check /> <span><strong>Portail propriétaire</strong><small>Lien sécurisé, carnet multi-animaux, documents, confirmations, historique des consentements.</small></span></label>
+              <label><input type="checkbox" data-production-check /> <span><strong>Supervision & conformité</strong><small>Monitoring, sauvegardes, export RGPD, suppression, mentions légales et contrats sous-traitants.</small></span></label>
+            </div>
+            <div class="production-status" id="production-status" aria-live="polite">
+              <strong>Priorité actuelle : base + WhatsApp + agenda.</strong>
+              <p>Sans ces trois briques, le produit reste une belle démo. Avec elles, tu peux vendre un pilote très cadré à une clinique.</p>
+            </div>
+          </section>
+          <section class="panel value-roadmap" aria-labelledby="value-roadmap-title">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Trajectoire de valeur</p>
+                <h2 id="value-roadmap-title">Ce qu’il faut construire pour rendre Strivea Vet revendable.</h2>
+                <p>La valeur ne vient pas seulement de l’interface : elle vient du revenu récurrent, du temps réellement gagné par les cliniques, de la rétention et des intégrations difficiles à remplacer.</p>
+              </div>
+              <span class="tag tag-forest">Objectif 5–10 ans</span>
+            </div>
+            <div class="value-milestones" aria-label="Objectifs de valorisation">
+              <article>
+                <span>Palier 1</span>
+                <strong>Première revente possible</strong>
+                <p>150 à 250 cliniques payantes, 15–25k € de MRR, produit fiable et peu dépendant du fondateur.</p>
+                <small>Valorisation cible : environ 500k à 1,5M € selon croissance et churn.</small>
+              </article>
+              <article>
+                <span>Palier 2</span>
+                <strong>SaaS vétérinaire sérieux</strong>
+                <p>400 à 700 cliniques, panier moyen renforcé avec options groupe, analytics et automatisations premium.</p>
+                <small>Valorisation cible : environ 2M à 5M € si la rétention est solide.</small>
+              </article>
+              <article>
+                <span>Palier 3</span>
+                <strong>Actif stratégique</strong>
+                <p>1 000+ cliniques ou plusieurs groupes vétérinaires, intégrations profondes et données d’usage fortes.</p>
+                <small>Valorisation cible : 7M à 10M+ € uniquement avec traction exceptionnelle.</small>
+              </article>
+            </div>
+            <div class="value-levers" aria-label="Leviers à ajouter pour augmenter la valeur">
+              <article><span>01</span><strong>Prix moyen plus haut</strong><p>Garder 109 € comme offre cabinet, puis ajouter options multi-cliniques, volume WhatsApp, analytics et accompagnement.</p></article>
+              <article><span>02</span><strong>Preuve de ROI</strong><p>Mesurer le temps gagné, les RDV récupérés, les avis Google obtenus, les no-shows évités et les suivis clôturés.</p></article>
+              <article><span>03</span><strong>Rétention</strong><p>Faire de Strivea Vet une habitude quotidienne : agenda, rappels, protocoles et synthèses doivent être utiles chaque semaine.</p></article>
+              <article><span>04</span><strong>Groupes vétérinaires</strong><p>Prévoir multi-clinique, rôles, reporting groupe et facturation centralisée pour vendre plus cher à moins de clients.</p></article>
+              <article><span>05</span><strong>Intégrations défensives</strong><p>WhatsApp, Google Calendar, liens RDV, avis Google et imports CSV rendent le produit plus difficile à remplacer.</p></article>
+              <article><span>06</span><strong>Données propres</strong><p>Audit, consentements, événements de suivi et statistiques clinique créent une base solide pour un futur acquéreur.</p></article>
+            </div>
+          </section>
+          <section class="panel vet-agent-module-map" aria-labelledby="vet-agent-module-map-title">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Fonctionnalités Vet Agent intégrées à la vision Strivea</p>
+                <h2 id="vet-agent-module-map-title">Le meilleur des concurrents, adapté à ton positionnement.</h2>
+                <p>Strivea Vet doit rester plus simple : couche de réception, suivi, rendez-vous et fidélisation avant de devenir un logiciel métier complet.</p>
+              </div>
+              <span class="tag tag-sand">Priorisation produit</span>
+            </div>
+            <div class="module-map-grid">
+              <article><span>À vendre en premier</span><strong>Réception IA + WhatsApp</strong><small>Répondre 24/7, qualifier, créer une tâche, proposer un RDV et escalader les urgences.</small></article>
+              <article><span>À vendre en premier</span><strong>Suivi post-op intelligent</strong><small>QCM, rappels, alertes complication, synthèse vétérinaire et clôture de suivi.</small></article>
+              <article><span>À vendre en premier</span><strong>Rappels vaccins & RDV</strong><small>J-30/J-7/J-2, no-show, liste d’attente et rappel automatique.</small></article>
+              <article><span>À vendre en premier</span><strong>Avis Google & réactivation</strong><small>Demande d’avis au bon moment et relance propriétaire inactif, avec consentement.</small></article>
+              <article><span>Phase 2</span><strong>Carnet propriétaire multi-animaux</strong><small>Documents, vaccins, consignes, photos et historique simplifié.</small></article>
+              <article><span>Phase 2</span><strong>Copilote consultation</strong><small>Brouillon SOAP, compte rendu, ordonnance PDF à valider par le vétérinaire.</small></article>
+              <article><span>Phase 3</span><strong>VoIP, transcription & appels</strong><small>Appels entrants, transcription, résumé, routage et tâches automatiques.</small></article>
+              <article><span>Phase 3</span><strong>Modules métier avancés</strong><small>Lab, imagerie, stock, hospitalisation, facturation complète : seulement après traction.</small></article>
+            </div>
+          </section>
+          <div class="launch-grid">
+            <section class="panel launch-section">
+              <div class="panel-heading"><div><p class="eyebrow">Parcours propriétaire</p><h2>Ce que Numa peut faire</h2></div><span class="tag tag-sage">4 actions</span></div>
+              <div class="launch-task-list">
+                <button class="launch-task is-done" type="button" data-launch-task aria-pressed="true"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Créer le protocole post-visite</strong><small>Messages J0, QCM et relais vers l’équipe définis.</small></span><span class="tag tag-sage launch-task-status">Prêt</span></button>
+                <button class="launch-task is-done" type="button" data-launch-task aria-pressed="true"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Configurer RDV & avis</strong><small>Les liens sont prêts à être proposés uniquement selon vos règles.</small></span><span class="tag tag-sage launch-task-status">Prêt</span></button>
+                <button class="launch-task" type="button" data-launch-task aria-pressed="false"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Valider chaque message et QCM</strong><small>Faire relire le ton, les délais et les cas de reprise humaine.</small></span><span class="tag tag-sand launch-task-status">À faire</span></button>
+                <button class="launch-task" type="button" data-launch-task aria-pressed="false"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Tester le parcours propriétaire complet</strong><small>De WhatsApp au lien Strivea Vet, puis à la confirmation de retour à domicile.</small></span><span class="tag tag-sand launch-task-status">À faire</span></button>
+              </div>
+            </section>
+            <section class="panel launch-section">
+              <div class="panel-heading"><div><p class="eyebrow">Clinique & équipe</p><h2>Qui reprend la main</h2></div><span class="tag tag-amber">4 actions</span></div>
+              <div class="launch-task-list">
+                <button class="launch-task is-done" type="button" data-launch-task aria-pressed="true"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Choisir la personne qui relit</strong><small>Emma est administratrice de la démo et reçoit les remontées.</small></span><span class="tag tag-sage launch-task-status">Prêt</span></button>
+                <button class="launch-task" type="button" data-launch-task aria-pressed="false"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Définir le délai de rappel réaliste</strong><small>Ne pas laisser Numa promettre une disponibilité que la clinique ne tient pas.</small></span><span class="tag tag-sand launch-task-status">À faire</span></button>
+                <button class="launch-task" type="button" data-launch-task aria-pressed="false"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Tester l’alerte « consultation à évaluer »</strong><small>Vérifier qu’elle arrive à la bonne équipe et exige une validation humaine.</small></span><span class="tag tag-sand launch-task-status">À faire</span></button>
+                <button class="launch-task" type="button" data-launch-task aria-pressed="false"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Préparer le guide de l’équipe</strong><small>Décrire qui lit, qui rappelle et comment documenter chaque suite.</small></span><span class="tag tag-sand launch-task-status">À faire</span></button>
+              </div>
+            </section>
+            <section class="panel launch-section launch-section-wide">
+              <div class="panel-heading"><div><p class="eyebrow">Cadre de lancement</p><h2>Sécurité, données et mise en production</h2></div><span class="tag tag-forest">4 actions</span></div>
+              <div class="launch-task-list launch-task-list-wide">
+                <button class="launch-task is-done" type="button" data-launch-task aria-pressed="true"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Relier le numéro WhatsApp Business de démonstration</strong><small>Le canal est identifié ; les vrais modèles de messages restent à configurer avant utilisation.</small></span><span class="tag tag-sage launch-task-status">Prêt</span></button>
+                <button class="launch-task" type="button" data-launch-task aria-pressed="false"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Obtenir et tracer le consentement propriétaire</strong><small>Consentement explicite, révocable et séparé pour le canal WhatsApp.</small></span><span class="tag tag-sand launch-task-status">À faire</span></button>
+                <button class="launch-task" type="button" data-launch-task aria-pressed="false"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Valider l’hébergement et les accès</strong><small>Chiffrement, journalisation, rôles, sauvegardes et hébergement adapté aux données concernées.</small></span><span class="tag tag-sand launch-task-status">À faire</span></button>
+                <button class="launch-task" type="button" data-launch-task aria-pressed="false"><span class="launch-task-check" aria-hidden="true">✓</span><span><strong>Faire relire le cadre juridique et les urgences</strong><small>CGU, confidentialité, contrats, mentions et procédure d’incident à valider pour votre activité.</small></span><span class="tag tag-sand launch-task-status">À faire</span></button>
+              </div>
+              <p class="launch-note">Cocher une action dans cette démo ne lance rien : cela sert uniquement à organiser la préparation. Les sujets médicaux, juridiques et de sécurité nécessitent une validation adaptée.</p>
+            </section>
+          </div>
+        </section>
+
+        <section class="app-view" id="view-urgent" aria-labelledby="urgent-title">
+          <header class="page-header urgent-header">
+            <div><p class="eyebrow">Écran de sécurité</p><h1 id="urgent-title">Urgence vétérinaire & cadre de service.</h1><p>Lorsqu’un signal potentiellement grave est évoqué, Strivea Vet n’analyse pas davantage la situation : l’automatisation s’arrête et le propriétaire est orienté vers la clinique ou une urgence vétérinaire.</p></div>
+          </header>
+          <section class="emergency-card">
+            <div class="emergency-icon" aria-hidden="true">!</div>
+            <div><p class="eyebrow">Informations générales</p><h2>En cas d’urgence vétérinaire ou de doute important, contactez immédiatement la clinique ou le service d’urgence vétérinaire le plus proche.</h2><div class="emergency-numbers"><a href="tel:0184000000"><strong>Clinique</strong><span>01 84 00 00 00</span></a><a href="tel:3115"><strong>3115</strong><span>Urgences vétérinaires selon zone</span></a><a href="tel:112"><strong>112</strong><span>Danger humain immédiat</span></a></div><p class="emergency-copy">N’attendez pas une réponse sur WhatsApp. Cette page ne fournit pas de conseil vétérinaire.</p></div>
+          </section>
+          <div class="legal-layout">
+            <section class="panel legal-panel"><p class="eyebrow">Rôle de Strivea Vet</p><h2>Un outil de coordination, pas un dispositif de diagnostic.</h2><ul><li>Numa ne pose pas de diagnostic, ne recommande pas de traitement et ne délivre pas de conclusion clinique automatique.</li><li>Le vétérinaire reste responsable de la validation des parcours, des messages sensibles et de la décision de soin.</li><li>Les liens de rendez-vous redirigent vers un service tiers ; Strivea Vet ne gère ni créneau ni consultation.</li></ul></section>
+            <section class="panel legal-panel"><p class="eyebrow">Données & consentement</p><h2>À mettre en place avant toute mise en production.</h2><ul><li>Consentement WhatsApp explicite du propriétaire, daté, révocable et mot-clé STOP.</li><li>Minimisation des données : pas de détail médical sensible dans WhatsApp ; accès sécurisé dans Strivea Vet.</li><li>RGPD standard sur les données du propriétaire ; pas d’HDS obligatoire pour des données animales, mais chiffrement et journal des accès recommandés.</li><li>Registre RGPD, contrats de sous-traitance et information propriétaire à valider juridiquement.</li></ul></section>
+          </div>
+          <section class="panel compliance-strip"><span aria-hidden="true">✓</span><div><strong>Checklist SaaS avant lancement</strong><p>CGU, politique de confidentialité, mentions légales, DPA, procédure d’incident, politique de conservation, gestion des droits d’accès et validation juridique doivent être finalisés selon votre activité et vos partenaires.</p></div><button class="button button-outline" type="button" data-toast="La checklist est disponible pour revue interne.">Voir la checklist</button></section>
+          <p class="legal-disclaimer">Prototype d’interface. Ces repères sont généraux et ne constituent pas un avis juridique, médical ou réglementaire.</p>
+        </section>
+
+        <section class="app-view" id="view-profile" aria-labelledby="profile-title">
+          <header class="page-header profile-header">
+            <div><p class="eyebrow">Votre espace personnel</p><h1 id="profile-title">Bonjour Emma.</h1><p>Vos informations de clinique, vos préférences et les accès de votre équipe.</p></div>
+            <button class="avatar profile-avatar" type="button" aria-label="Photo de profil fictive">E</button>
+          </header>
+          <div class="profile-grid">
+            <section class="panel profile-card">
+              <div class="profile-identity"><span class="avatar avatar-xl">E</span><div><h2>Dr Emma Laurent</h2><p>Vétérinaire · Clinique Laurent Vet</p><span class="tag tag-sage">Compte vérifié · Démo</span></div></div>
+              <dl class="details-list"><div><dt>E-mail professionnel</dt><dd>emma.laurent@laurent-vet-demo.fr</dd></div><div><dt>Téléphone de la clinique</dt><dd>01 84 00 00 00</dd></div><div><dt>Adresse</dt><dd>18 rue des Lilas, 75011 Paris</dd></div><div><dt>Fuseau horaire</dt><dd>Europe / Paris</dd></div></dl>
+              <button class="button button-outline" type="button" data-toast="Modification de profil ouverte dans la version complète.">Modifier mes informations</button>
+            </section>
+            <section class="panel profile-card"><p class="eyebrow">Canal propriétaire</p><h2>WhatsApp Business</h2><div class="connection-card"><span class="connection-dot"></span><div><strong>Numéro de démonstration connecté</strong><small>+33 6 00 00 00 00 · messages soumis aux règles du protocole Numa</small></div></div><label class="switch-row"><span><strong>Plage d’envoi</strong><small>Lundi au vendredi, de 9h à 19h.</small></span><input type="checkbox" checked /><i></i></label><button class="text-link" type="button" data-toast="La configuration WhatsApp est prête pour revue.">Gérer la configuration →</button></section>
+            <section class="panel profile-card"><p class="eyebrow">Équipe & accès</p><h2>Qui peut voir quoi ?</h2><div class="team-list"><div><span class="avatar avatar-team">E</span><p><strong>Dr Emma Laurent</strong><small>Vétérinaire · administratrice</small></p><span class="tag tag-forest">Vous</span></div><div><span class="avatar avatar-team avatar-sand">M</span><p><strong>Marie D.</strong><small>ASV · messages et rappels</small></p><span class="tag tag-sand">Accès limité</span></div></div><button class="text-link" type="button" data-toast="Gestion des rôles ouverte dans la version complète.">Gérer les accès →</button></section>
+            <section class="panel profile-card"><p class="eyebrow">Traçabilité</p><h2>Journal & préférences</h2><div class="audit-list"><p><span>08 sept. · 09:18</span> Protocole Numa consulté</p><p><span>07 sept. · 17:41</span> Lien Doctolib modifié</p><p><span>07 sept. · 16:06</span> Consentement de démonstration enregistré</p></div><button class="text-link" type="button" data-route="urgent">Données, consentement & mentions →</button></section>
+          </div>
+        </section>
+      </main>
+    </section>
+
+    <section class="assistant-assistant" id="assistant-assistant" hidden aria-label="Assistant clinique">
+      <button class="assistant-toggle" id="assistant-toggle" type="button" aria-expanded="false" aria-controls="assistant-panel">
+        <span class="assistant-avatar" aria-hidden="true"><img src="assets/assistant-avatar-professional.png" alt="" /></span>
+        <span><strong>Assistant clinique</strong><small>Actions à confirmer</small></span>
+        <span class="assistant-toggle-hint">Préparer une action</span>
+      </button>
+      <div class="assistant-panel" id="assistant-panel" hidden>
+        <header class="assistant-head">
+          <div><span class="assistant-avatar" aria-hidden="true"><img src="assets/assistant-avatar-professional.png" alt="" /></span><span><strong>Assistant clinique</strong><small>Guide & coordination · brouillons validables</small></span></div>
+          <button class="assistant-close" id="assistant-close" type="button" aria-label="Fermer l’assistant clinique">×</button>
+        </header>
+        <div class="assistant-thread" id="assistant-thread" aria-live="polite">
+          <div class="assistant-message assistant-message-assistant">
+            <p>Bonjour, je suis l’assistant clinique. J’aide l’équipe à parcourir Strivea Vet et à préparer les actions de suivi à confirmer.</p>
+            <small>Numa parle aux propriétaires selon vos protocoles vétérinaires ; moi, je vous accompagne côté équipe clinique. Je n’envoie rien seul.</small>
+          </div>
+        </div>
+        <div class="assistant-suggestions" aria-label="Exemples de demandes">
+          <button type="button" data-assistant-prompt="Montre-moi mes priorités du jour">Mes priorités</button>
+          <button type="button" data-assistant-prompt="Ouvre les animaux">Animaux</button>
+          <button type="button" data-assistant-prompt="Prépare un rappel pour Nala">Préparer un rappel</button>
+          <button type="button" data-assistant-prompt="Ouvre Numa">Voir Numa</button>
+        </div>
+        <form class="assistant-form" id="assistant-form">
+          <label class="sr-only" for="assistant-input">Parler à l’assistant clinique</label>
+          <input id="assistant-input" autocomplete="off" maxlength="240" placeholder="Ex. ouvre les automatisations ou prépare un rappel…" />
+          <button class="assistant-send" type="submit" aria-label="Envoyer à l’assistant clinique">↑</button>
+        </form>
+        <p class="assistant-boundary">L’assistant clinique guide l’équipe et prépare des brouillons. Numa échange avec le propriétaire selon le protocole. Aucun assistant ne pose de diagnostic, ne recommande de traitement, ni n’agit à l’extérieur sans validation.</p>
+      </div>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js?v=20260917-vet-sales"></script>
+    <script src="document-library.js?v=20260917-vet-sales"></script>
+    <script src="protocol-editor.js?v=20260917-vet-sales"></script>
+    <script src="interior-settings.js?v=20260917-vet-sales"></script>
+  <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a42ceb7b0da646c7',t:'MTc5MDcwNTE2Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,1505 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101213" />
+  <title>Strivea Vet Pocket — prototype portable</title>
+  <style>
+    :root {
+      --bg: #f6f5f0;
+      --surface: #ffffff;
+      --surface-soft: #f0eee7;
+      --text: #16231c;
+      --muted: #667268;
+      --brand: #1e4e38;
+      --brand-2: #5cb98a;
+      --alert: #b8842e;
+      --danger: #ff3b49;
+      --line: rgba(22, 35, 28, .12);
+      --shadow: 0 24px 60px rgba(25, 38, 31, .16);
+      --radius: 26px;
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #0e1010;
+      --surface: #171a19;
+      --surface-soft: #202423;
+      --text: #f2f1ed;
+      --muted: #a2aaa4;
+      --brand: #5cb98a;
+      --brand-2: #8bd7a8;
+      --alert: #e0a85c;
+      --line: rgba(255, 255, 255, .1);
+      --shadow: 0 24px 70px rgba(0, 0, 0, .32);
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, color-mix(in srgb, var(--brand) 16%, transparent), transparent 36%),
+        linear-gradient(135deg, var(--bg), color-mix(in srgb, var(--surface-soft) 45%, var(--bg)));
+      color: var(--text);
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .phone-stage {
+      width: min(100%, 430px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 14px 14px 96px;
+    }
+
+    .app-shell {
+      min-height: calc(100vh - 28px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        linear-gradient(160deg, color-mix(in srgb, var(--surface) 88%, transparent), color-mix(in srgb, var(--surface-soft) 94%, transparent));
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 18px 12px;
+      background: color-mix(in srgb, var(--surface) 92%, transparent);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+    }
+
+    .brand span {
+      display: grid;
+      gap: 1px;
+    }
+
+    .brand strong {
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .brand small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .icon-button {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface-soft);
+      color: var(--text);
+      font-weight: 900;
+    }
+
+    .icon-button.primary {
+      border-color: color-mix(in srgb, var(--brand) 52%, transparent);
+      background: var(--brand);
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .view {
+      display: none;
+      padding: 18px;
+    }
+
+    .view.active {
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-card,
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      box-shadow: 0 14px 36px rgba(0,0,0,.08);
+    }
+
+    .hero-card {
+      padding: 20px;
+      background:
+        radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--brand) 18%, transparent), transparent 32%),
+        linear-gradient(145deg, var(--surface), var(--surface-soft));
+    }
+
+    .eyebrow {
+      margin: 0 0 6px;
+      color: var(--brand);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 12ch;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      line-height: .98;
+      letter-spacing: -.04em;
+    }
+
+    h2 {
+      font-size: 17px;
+      letter-spacing: -.02em;
+    }
+
+    .hero-card > p:not(.eyebrow) {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .metric {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: color-mix(in srgb, var(--surface) 62%, transparent);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 21px;
+      line-height: 1;
+    }
+
+    .metric small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.25;
+    }
+
+    .card {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      width: max-content;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--brand) 12%, transparent);
+      color: var(--brand);
+      font-size: 10px;
+      font-weight: 850;
+    }
+
+    .tag.alert {
+      background: color-mix(in srgb, var(--alert) 16%, transparent);
+      color: var(--alert);
+    }
+
+    .row-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .item-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: color-mix(in srgb, var(--surface-soft) 70%, transparent);
+      color: var(--text);
+      text-align: left;
+    }
+
+    .item-time {
+      display: grid;
+      min-width: 48px;
+      color: var(--brand);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .item-row strong {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+
+    .item-row small {
+      display: block;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .initials {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 13px;
+      background: color-mix(in srgb, var(--brand) 16%, transparent);
+      color: var(--brand);
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .calendar-mini {
+      display: grid;
+      gap: 10px;
+    }
+
+    .day-strip {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+    }
+
+    .day-pill {
+      display: grid;
+      gap: 3px;
+      justify-items: center;
+      padding: 9px 4px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: color-mix(in srgb, var(--surface-soft) 70%, transparent);
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .day-pill b {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .day-pill.active {
+      border-color: color-mix(in srgb, var(--danger) 60%, transparent);
+      background: var(--danger);
+      color: #fff;
+    }
+
+    .day-pill.active b {
+      color: #fff;
+    }
+
+    .calendar-line {
+      position: relative;
+      height: 340px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        linear-gradient(to bottom, var(--line) 1px, transparent 1px) 0 0 / 100% 52px,
+        color-mix(in srgb, var(--surface-soft) 62%, transparent);
+    }
+
+    .calendar-redline {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 48%;
+      height: 1px;
+      background: var(--danger);
+      pointer-events: none;
+    }
+
+    .calendar-redline span {
+      position: absolute;
+      top: -8px;
+      left: 10px;
+      color: var(--danger);
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .floating-event {
+      position: absolute;
+      left: 82px;
+      right: 12px;
+      min-height: 54px;
+      padding: 9px;
+      border-radius: 15px;
+      background: color-mix(in srgb, var(--brand) 22%, var(--surface));
+      border: 1px solid color-mix(in srgb, var(--brand) 32%, transparent);
+      color: var(--text);
+      text-align: left;
+    }
+
+    .floating-event small {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .time-scale {
+      position: absolute;
+      inset: 0 auto 0 0;
+      display: grid;
+      width: 62px;
+      grid-template-rows: repeat(6, 1fr);
+      padding: 12px 0;
+      color: var(--muted);
+      font-size: 10px;
+      text-align: right;
+    }
+
+    .time-scale span {
+      padding-right: 10px;
+    }
+
+    .numa-pocket {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+    }
+
+    .numa-pocket img {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    .message-bubble {
+      padding: 12px;
+      border-radius: 18px 18px 18px 5px;
+      background: color-mix(in srgb, var(--brand) 12%, var(--surface));
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .action-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .mini-button {
+      min-height: 38px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface-soft);
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .mini-button.primary {
+      border-color: color-mix(in srgb, var(--brand) 52%, transparent);
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .portable-thread-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .portable-thread-title {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .portable-thread-title strong,
+    .portable-thread-title small {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .portable-thread-title small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .safety-note,
+    .thread-footer {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: color-mix(in srgb, var(--surface-soft) 78%, transparent);
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .pocket-chat-thread {
+      display: grid;
+      align-content: start;
+      gap: 9px;
+      min-height: 390px;
+      max-height: 54vh;
+      overflow-y: auto;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--surface-soft) 86%, transparent), color-mix(in srgb, var(--surface) 76%, transparent));
+      scrollbar-gutter: stable;
+    }
+
+    .thread-day {
+      justify-self: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface) 70%, transparent);
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 850;
+    }
+
+    .chat-bubble {
+      display: grid;
+      gap: 4px;
+      width: min(88%, 292px);
+      padding: 11px 12px;
+      border-radius: 18px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .chat-bubble small {
+      color: color-mix(in srgb, currentColor 72%, transparent);
+      font-size: 10px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .chat-bubble.numa {
+      justify-self: start;
+      border-bottom-left-radius: 6px;
+      background: color-mix(in srgb, var(--brand) 12%, var(--surface));
+    }
+
+    .chat-bubble.owner,
+    .chat-bubble.vet {
+      justify-self: end;
+      border-bottom-right-radius: 6px;
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .portable-qcm {
+      display: grid;
+      gap: 9px;
+      width: min(100%, 330px);
+      padding: 13px;
+      border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent);
+      border-radius: 20px;
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+    }
+
+    .qcm-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+
+    .qcm-options button {
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--surface-soft);
+      color: var(--text);
+      padding: 9px 7px;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .thread-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .composer {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .composer .button {
+      min-width: 82px;
+      padding: 0 12px;
+    }
+
+    .patient-record-panel,
+    .signature-history-card,
+    .signature-protocol-card {
+      display: grid;
+      gap: 12px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--brand) 10%, transparent), transparent 35%),
+        color-mix(in srgb, var(--surface) 86%, transparent);
+    }
+
+    .patient-record-top,
+    .signature-card-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .patient-record-top h2,
+    .signature-card-head h2,
+    .signature-card-head h3 {
+      margin-top: 2px;
+    }
+
+    .patient-record-top small,
+    .signature-card-head small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .patient-summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .patient-summary-grid article {
+      display: grid;
+      gap: 4px;
+      padding: 11px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: color-mix(in srgb, var(--surface-soft) 70%, transparent);
+    }
+
+    .patient-summary-grid span,
+    .patient-summary-grid small {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.25;
+    }
+
+    .patient-summary-grid strong {
+      font-size: 15px;
+    }
+
+    .patient-timeline-mini,
+    .signature-history-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .patient-timeline-mini span,
+    .signature-history-facts span {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--brand) 12%, transparent);
+      color: var(--brand);
+      font-size: 10px;
+      font-weight: 850;
+    }
+
+    .patient-timeline-mini .is-current {
+      background: color-mix(in srgb, var(--alert) 18%, transparent);
+      color: var(--alert);
+    }
+
+    .signature-ai-form {
+      display: grid;
+      gap: 9px;
+    }
+
+    .signature-presets {
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .signature-presets button {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: var(--brand);
+      padding: 8px 10px;
+      font-size: 10px;
+      font-weight: 850;
+    }
+
+    .protocol-steps {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .protocol-steps li {
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: color-mix(in srgb, var(--surface-soft) 72%, transparent);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .signature-history-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .signature-history-list article {
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: color-mix(in srgb, var(--surface-soft) 72%, transparent);
+    }
+
+    .signature-history-list strong,
+    .history-note strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 12px;
+    }
+
+    .signature-history-list p,
+    .history-note p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.42;
+    }
+
+    .history-note {
+      padding: 12px;
+      border: 1px solid color-mix(in srgb, var(--alert) 22%, transparent);
+      border-radius: 16px;
+      background: color-mix(in srgb, var(--alert) 9%, transparent);
+    }
+
+    .bottom-nav {
+      position: fixed;
+      left: 50%;
+      bottom: 14px;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      width: min(402px, calc(100vw - 28px));
+      gap: 6px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: color-mix(in srgb, var(--surface) 92%, transparent);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      transform: translateX(-50%);
+    }
+
+    .bottom-nav button {
+      display: grid;
+      gap: 2px;
+      justify-items: center;
+      min-width: 0;
+      padding: 8px 4px;
+      border: 0;
+      border-radius: 16px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .bottom-nav button span {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .bottom-nav button.active {
+      background: color-mix(in srgb, var(--brand) 14%, transparent);
+      color: var(--brand);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: grid;
+      place-items: end center;
+      padding: 12px;
+      background: rgba(0, 0, 0, .48);
+      backdrop-filter: blur(12px);
+    }
+
+    .modal[hidden] {
+      display: none !important;
+    }
+
+    .sheet {
+      width: min(430px, 100%);
+      max-height: min(86vh, 760px);
+      overflow: auto;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .choice {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .choice label,
+    .field {
+      display: grid;
+      gap: 6px;
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .choice label {
+      padding: 11px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface-soft);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface-soft);
+      color: var(--text);
+      outline: 0;
+      padding: 11px 12px;
+      font-size: 13px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      border: 0;
+      border-radius: 16px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 850;
+    }
+
+    .button.secondary {
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      color: var(--text);
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 420px) {
+      .phone-stage {
+        padding: 0 0 90px;
+      }
+
+      .app-shell {
+        min-height: 100vh;
+        border: 0;
+        border-radius: 0;
+      }
+
+      .form-grid,
+      .choice {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="phone-stage">
+    <section class="app-shell" aria-label="Strivea Vet Pocket">
+      <header class="topbar">
+        <div class="brand">
+          <img src="assets/strivea-logo.png" alt="" />
+          <span><strong>Strivea Vet Pocket</strong><small id="view-label">Aujourd’hui</small></span>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="Changer le thème">◐</button>
+          <button class="icon-button primary" id="open-rdv" type="button" aria-label="Ajouter un rendez-vous">+</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="view active" id="view-today">
+          <article class="hero-card">
+            <p class="eyebrow">Aujourd’hui · Clinique Laurent Vet</p>
+            <h1>Ce qui demande votre attention.</h1>
+            <p>Vue portable pour garder les prochains rendez-vous, les animaux sensibles et les actions Numa devant vous.</p>
+            <div class="metrics">
+              <div class="metric"><strong id="metric-rdv">3</strong><small>RDV aujourd’hui</small></div>
+              <div class="metric"><strong>1</strong><small>signal à évaluer</small></div>
+              <div class="metric"><strong>2</strong><small>actions prêtes</small></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Prochains RDV</p><h2>À l’heure précise</h2></div><span class="tag">Connecté agenda</span></div>
+            <div class="row-list" id="today-list"></div>
+          </article>
+
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Signal</p><h2>Nala nécessite une décision.</h2></div><span class="tag alert">À évaluer</span></div>
+            <p class="message-bubble">Claire signale appétit absent et plaie rouge. Numa ne conclut pas : l’équipe clinique décide de la suite.</p>
+            <div class="action-line">
+              <button class="mini-button primary" type="button" data-go-view="animals">Ouvrir l’échange</button>
+              <button class="mini-button" type="button" data-go-view="signature">Suivi Signature</button>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="view-calendar">
+          <article class="card calendar-mini">
+            <div class="card-head"><div><p class="eyebrow">septembre 2026</p><h2>Calendrier semaine</h2></div><span class="tag">Vendredi 18</span></div>
+            <div class="day-strip" aria-label="Semaine">
+              <div class="day-pill"><span>dim.</span><b>13</b></div>
+              <div class="day-pill"><span>lun.</span><b>14</b></div>
+              <div class="day-pill"><span>mar.</span><b>15</b></div>
+              <div class="day-pill"><span>mer.</span><b>16</b></div>
+              <div class="day-pill"><span>jeu.</span><b>17</b></div>
+              <div class="day-pill active"><span>ven.</span><b>18</b></div>
+              <div class="day-pill"><span>sam.</span><b>19</b></div>
+            </div>
+            <div class="calendar-line" id="portable-calendar-line">
+              <div class="time-scale"><span>10 AM</span><span>Midi</span><span>2 PM</span><span>4 PM</span><span>6 PM</span><span>8 PM</span></div>
+              <div id="portable-events"></div>
+              <div class="calendar-redline" id="portable-redline"><span id="portable-redtime">18:58</span></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="view-animals">
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Animaux</p><h2>Profils suivis</h2></div><span class="tag" id="animal-count">4</span></div>
+            <div class="row-list" id="animal-list"></div>
+          </article>
+
+          <article class="card">
+            <div class="portable-thread-head">
+              <div class="portable-thread-title">
+                <span class="initials">NA</span>
+                <span><strong>Nala · Claire Martin</strong><small>Consentement WhatsApp · suivi post-stérilisation</small></span>
+              </div>
+              <span class="tag alert">Signal</span>
+            </div>
+            <p class="safety-note">WhatsApp sert aux échanges pratiques avec le propriétaire. Les informations détaillées restent dans Strivea Vet.</p>
+            <div class="pocket-chat-thread" id="portable-animal-thread">
+              <div class="thread-day">Aujourd’hui</div>
+              <div class="chat-bubble numa"><small>Numa</small><p>Bonjour Claire, petit point prévu pour Nala après sa stérilisation. A-t-elle mangé ? La plaie vous semble-t-elle propre ?</p></div>
+              <div class="chat-bubble owner"><small>Claire</small><p>Elle n’a pas vraiment mangé depuis hier soir et la plaie me paraît un peu rouge. Elle essaie aussi d’enlever sa collerette.</p></div>
+              <div class="portable-qcm">
+                <p class="eyebrow">Côté propriétaire · WhatsApp</p>
+                <strong>Claire, comment va Nala depuis l’intervention ?</strong>
+                <div class="qcm-options">
+                  <button type="button">Elle va bien</button>
+                  <button type="button">C’est stable</button>
+                  <button type="button">Je suis inquiète</button>
+                  <button type="button">Je veux être rappelée</button>
+                </div>
+              </div>
+            </div>
+            <div class="thread-actions">
+              <button class="mini-button primary" type="button">Brouillon clinique</button>
+              <button class="mini-button" type="button">Préparer rappel</button>
+              <button class="mini-button" type="button">Préparer RDV</button>
+              <button class="mini-button" type="button" data-go-view="signature">Suivi Signature</button>
+            </div>
+            <form class="composer" id="portable-message-form">
+              <input id="portable-message-input" maxlength="180" placeholder="Écrire un brouillon pour Claire…" />
+              <button class="button" type="submit">Ajouter</button>
+            </form>
+            <p class="thread-footer">Brouillon visible dans cette démo uniquement. Validation humaine requise avant tout envoi réel.</p>
+            <section class="patient-record-panel" aria-label="Dossier de suivi portable">
+              <div class="patient-record-top">
+                <div><p class="eyebrow">Dossier de suivi</p><h2>Nala</h2><small>Propriétaire : Claire Martin · protocole actif : post-stérilisation J+1</small></div>
+                <span class="tag alert">Signal à évaluer</span>
+              </div>
+              <div class="patient-summary-grid">
+                <article><span>Dernière interaction</span><strong>09:16</strong><small>question collerette</small></article>
+                <article><span>Appétit</span><strong>absent</strong><small>depuis hier soir</small></article>
+                <article><span>Plaie</span><strong>rouge</strong><small>signal propriétaire</small></article>
+                <article><span>Suite</span><strong>À décider</strong><small>rappel ou RDV validé</small></article>
+              </div>
+              <div class="patient-timeline-mini">
+                <span>J0 consignes envoyées</span>
+                <span>J+1 QCM répondu</span>
+                <span class="is-current">J+1 alerte clinique</span>
+                <span>J+7 contrôle prévu</span>
+              </div>
+            </section>
+          </article>
+        </section>
+
+        <section class="view" id="view-numa">
+          <article class="card">
+            <div class="numa-pocket">
+              <img src="assets/numa-avatar-professional.png" alt="" />
+              <div><p class="eyebrow">Numa</p><h2>Suivi propriétaire WhatsApp</h2><p style="color:var(--muted);font-size:12px;line-height:1.45;margin-top:5px;">Numa applique les protocoles validés. Elle ne diagnostique pas, ne prescrit pas et remonte les écarts à l’équipe.</p></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Actions</p><h2>Automatisations prêtes</h2></div></div>
+            <button class="item-row" type="button"><span class="initials">J0</span><span><strong>Message retour à domicile</strong><small>Envoyé après visite clôturée</small></span><span>›</span></button>
+            <button class="item-row" type="button"><span class="initials">J+1</span><span><strong>QCM propriétaire</strong><small>Appétit, énergie, plaie, rappel</small></span><span>›</span></button>
+            <button class="item-row" type="button"><span class="initials">!</span><span><strong>Alerte clinique</strong><small>Écart au protocole → humain</small></span><span>›</span></button>
+            <button class="item-row" type="button" data-go-view="signature"><span class="initials">✦</span><span><strong>Suivi Signature</strong><small>Chat Numa + protocole patient à valider</small></span><span>›</span></button>
+          </article>
+        </section>
+
+        <section class="view" id="view-signature">
+          <article class="card">
+            <div class="card-head"><div><p class="eyebrow">Suivi Signature</p><h2>Parlez à Numa après la consultation.</h2></div><span class="tag">Brouillon</span></div>
+            <div class="pocket-chat-thread" id="pocket-signature-thread">
+              <div class="thread-day">Post-consultation</div>
+              <div class="chat-bubble numa"><small>Numa</small><p>Racontez-moi ce qui s’est passé pendant la consultation. Je pars de vos protocoles enregistrés, puis je prépare un suivi à valider.</p></div>
+            </div>
+            <div class="signature-presets">
+              <button type="button" data-signature-prompt="Nala a été stérilisée ce matin. Retour à domicile OK. Collerette 10 jours. Surveiller appétit, énergie et plaie.">Post-stérilisation</button>
+              <button type="button" data-signature-prompt="Oslo revient après chirurgie orthopédique. Repos strict, surveiller appui, pansement, appétit et douleur apparente.">Post-op</button>
+              <button type="button" data-signature-prompt="Moka est en suivi chronique. Vérifier prise du traitement, appétit, eau, poids et comportement.">Chronique</button>
+            </div>
+            <form class="signature-ai-form" id="pocket-signature-form">
+              <textarea id="pocket-signature-input" rows="3" placeholder="Ex. Nala rentre après stérilisation, collerette 10 jours, surveiller appétit et plaie…"></textarea>
+              <button class="button" type="submit">Préparer le suivi</button>
+            </form>
+          </article>
+
+          <article class="signature-protocol-card" id="pocket-protocol-card">
+            <div class="signature-card-head">
+              <div><p class="eyebrow">Protocole patient à valider</p><h3 id="pocket-protocol-name">En attente de votre note</h3><small id="pocket-protocol-reason">Numa utilisera d’abord les protocoles enregistrés. Si ce n’est pas le bon, dites “pas ça” et décrivez le suivi voulu.</small></div>
+              <span class="tag" id="pocket-protocol-status">À analyser</span>
+            </div>
+            <ol class="protocol-steps" id="pocket-protocol-steps">
+              <li>Analyse de la note vétérinaire</li>
+              <li>Choix d’une base de protocole</li>
+              <li>Validation humaine avant tout envoi</li>
+            </ol>
+            <div class="thread-actions">
+              <button class="mini-button primary" type="button" id="pocket-validate-protocol">Valider</button>
+              <button class="mini-button" type="button" id="pocket-edit-protocol">Modifier avec Numa</button>
+            </div>
+          </article>
+
+          <article class="signature-history-card">
+            <div class="signature-card-head">
+              <div><p class="eyebrow">Dossier rapide</p><h3>Antécédents de Nala</h3><small>Chatte européenne · 3 ans · Claire Martin · WhatsApp préféré.</small></div>
+              <span class="tag alert">Signal</span>
+            </div>
+            <div class="signature-history-facts">
+              <span>Vaccins à jour</span>
+              <span>Aucune allergie déclarée</span>
+              <span>Digestion sensible</span>
+              <span>Stress en caisse</span>
+            </div>
+            <div class="signature-history-list">
+              <article><strong>Aujourd’hui</strong><p>Stérilisation, anesthésie OK, retour à domicile, collerette 10 jours.</p></article>
+              <article><strong>16 sept.</strong><p>Consultation pré-opératoire, poids stable et consentement validé.</p></article>
+              <article><strong>Juillet</strong><p>Dermatite légère résolue après contrôle.</p></article>
+            </div>
+            <div class="history-note"><strong>À garder en tête</strong><p>Claire répond vite sur WhatsApp et préfère des consignes courtes. Surveiller appétit, plaie, énergie et léchage.</p></div>
+          </article>
+        </section>
+      </main>
+    </section>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Navigation portable">
+    <button class="active" type="button" data-tab="today"><span>◷</span>Aujourd’hui</button>
+    <button type="button" data-tab="calendar"><span>▦</span>Calendrier</button>
+    <button type="button" data-tab="animals"><span>◌</span>Animaux</button>
+    <button type="button" data-tab="numa"><span>✦</span>Numa</button>
+    <button type="button" id="nav-plus"><span>+</span>RDV</button>
+  </nav>
+
+  <section class="modal" id="rdv-modal" hidden role="dialog" aria-modal="true" aria-labelledby="rdv-title">
+    <div class="sheet">
+      <header class="sheet-head">
+        <div><p class="eyebrow">Nouveau rendez-vous</p><h2 id="rdv-title">Inscrire un RDV</h2></div>
+        <button class="icon-button" id="close-rdv" type="button" aria-label="Fermer">×</button>
+      </header>
+      <form class="form" id="rdv-form">
+        <div class="choice">
+          <label><input type="radio" name="client-mode" value="existing" checked /> Client enregistré</label>
+          <label><input type="radio" name="client-mode" value="new" /> Nouveau client</label>
+        </div>
+        <div id="existing-client-block">
+          <label class="field">Client / animal
+            <select id="existing-client"></select>
+          </label>
+        </div>
+        <div id="new-client-block" hidden>
+          <label class="field">Animal<input id="new-animal" placeholder="Ex. Rio" /></label>
+          <label class="field">Propriétaire<input id="new-owner" placeholder="Ex. Manon Petit" /></label>
+          <label class="field">Téléphone<input id="new-phone" placeholder="+33 6 ..." /></label>
+        </div>
+        <div class="form-grid">
+          <label class="field">Heure<input id="rdv-time" type="time" value="14:30" required /></label>
+          <label class="field">Durée<select id="rdv-duration"><option>20 min</option><option selected>30 min</option><option>45 min</option><option>60 min</option></select></label>
+        </div>
+        <label class="field">Type<select id="rdv-type"><option>Contrôle post-visite</option><option>Consultation</option><option>Vaccin</option><option>Chirurgie</option><option>Urgence à évaluer</option></select></label>
+        <label class="field">Motif<textarea id="rdv-reason" rows="3" placeholder="Ex. contrôle boiterie, vaccin annuel..." required></textarea></label>
+        <label class="field">Suivi Numa<select id="rdv-protocol"><option>J0 · retour consultation</option><option>Post-stérilisation</option><option>Post-op orthopédie</option><option>Rappel vaccin</option><option>Aucun pour l’instant</option></select></label>
+        <button class="button" type="submit">Ajouter au calendrier</button>
+        <button class="button secondary" id="fill-demo" type="button">Remplir un exemple</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    (() => {
+      const clients = {
+        nala: { animal: "Nala", owner: "Claire Martin", phone: "+33 6 00 00 00 01", status: "Signal à évaluer" },
+        moka: { animal: "Moka", owner: "Julie Petit", phone: "+33 6 00 00 00 02", status: "Synthèse prête" },
+        oslo: { animal: "Oslo", owner: "Karim Benali", phone: "+33 6 00 00 00 03", status: "À surveiller" },
+        luna: { animal: "Luna", owner: "Marc Delmas", phone: "+33 6 00 00 00 04", status: "Suivi terminé" }
+      };
+
+      const appointments = [
+        { id: "a1", key: "nala", time: "09:00", duration: "30 min", type: "Contrôle post-visite", reason: "Plaie + appétit à vérifier", protocol: "Post-stérilisation" },
+        { id: "a2", key: "moka", time: "10:30", duration: "30 min", type: "Suivi chronique", reason: "Contrôle diabète félin", protocol: "Suivi chronique" },
+        { id: "a3", key: "oslo", time: "15:00", duration: "45 min", type: "Post-op orthopédie", reason: "Locomotion J+5", protocol: "Post-op orthopédie" }
+      ];
+
+      const views = [...document.querySelectorAll(".view")];
+      const navButtons = [...document.querySelectorAll(".bottom-nav [data-tab]")];
+      const goViewButtons = [...document.querySelectorAll("[data-go-view]")];
+      const label = document.getElementById("view-label");
+      const todayList = document.getElementById("today-list");
+      const animalList = document.getElementById("animal-list");
+      const eventLayer = document.getElementById("portable-events");
+      const metricRdv = document.getElementById("metric-rdv");
+      const animalCount = document.getElementById("animal-count");
+      const modal = document.getElementById("rdv-modal");
+      const openRdv = document.getElementById("open-rdv");
+      const navPlus = document.getElementById("nav-plus");
+      const closeRdv = document.getElementById("close-rdv");
+      const form = document.getElementById("rdv-form");
+      const existingSelect = document.getElementById("existing-client");
+      const existingBlock = document.getElementById("existing-client-block");
+      const newBlock = document.getElementById("new-client-block");
+      const redline = document.getElementById("portable-redline");
+      const redtime = document.getElementById("portable-redtime");
+      const calendarLine = document.getElementById("portable-calendar-line");
+      const portableMessageForm = document.getElementById("portable-message-form");
+      const portableMessageInput = document.getElementById("portable-message-input");
+      const portableAnimalThread = document.getElementById("portable-animal-thread");
+      const pocketSignatureThread = document.getElementById("pocket-signature-thread");
+      const pocketSignatureForm = document.getElementById("pocket-signature-form");
+      const pocketSignatureInput = document.getElementById("pocket-signature-input");
+      const pocketProtocolName = document.getElementById("pocket-protocol-name");
+      const pocketProtocolReason = document.getElementById("pocket-protocol-reason");
+      const pocketProtocolStatus = document.getElementById("pocket-protocol-status");
+      const pocketProtocolSteps = document.getElementById("pocket-protocol-steps");
+
+      function initials(name) {
+        return (name || "??").slice(0, 2).toUpperCase();
+      }
+
+      function plainText(value) {
+        return String(value || "").toLocaleLowerCase("fr").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+
+      function appendChatBubble(thread, type, author, message) {
+        if (!thread || !message) return;
+        const bubble = document.createElement("div");
+        bubble.className = "chat-bubble " + type;
+        const small = document.createElement("small");
+        const paragraph = document.createElement("p");
+        small.textContent = author;
+        paragraph.textContent = message;
+        bubble.append(small, paragraph);
+        thread.appendChild(bubble);
+        thread.scrollTop = thread.scrollHeight;
+      }
+
+      function suggestPocketProtocol(note) {
+        const command = plainText(note);
+        if (/orthop|boiterie|appui|pansement|repos/.test(command)) {
+          return {
+            name: "Post-op orthopédie",
+            status: "Bibliothèque",
+            reason: "Base issue du protocole locomotion. Validation humaine avant tout lien RDV.",
+            steps: [
+              "J0 · consignes repos strict, sorties courtes et surveillance pansement",
+              "J+1 · QCM appui, appétit, douleur apparente et comportement",
+              "J+3 · relance courte si silence ou doute propriétaire",
+              "J+10 · contrôle uniquement selon validation clinique"
+            ]
+          };
+        }
+        if (/chronique|diab|traitement|poids|eau|cachet/.test(command)) {
+          return {
+            name: "Suivi chronique personnalisé",
+            status: "Bibliothèque",
+            reason: "Base issue du suivi long. Numa ne modifie jamais un traitement.",
+            steps: [
+              "J0 · rappel du cadre validé par la clinique",
+              "J+3 · QCM prise du traitement, appétit, eau, énergie",
+              "J+7 · synthèse équipe avant contrôle",
+              "Mensuel · point propriétaire sans conclusion clinique"
+            ]
+          };
+        }
+        if (/pas ca|ps ca|non|autre|nouveau|creer|créer/.test(command)) {
+          return {
+            name: "Nouveau protocole local · Nala",
+            status: "Créé localement",
+            reason: "Numa prépare une nouvelle base à partir de votre demande. Elle reste en brouillon.",
+            steps: [
+              "J0 · message propriétaire adapté à la consultation décrite",
+              "J+1 · QCM court selon les points que vous avez cités",
+              "J+3 · relance ou tâche équipe si un doute remonte",
+              "Validation clinique · relire avant activation"
+            ]
+          };
+        }
+        return {
+          name: "Post-stérilisation",
+          status: "Bibliothèque",
+          reason: "Base issue du protocole post-stérilisation : collerette, plaie, appétit et énergie.",
+          steps: [
+            "J0 · message retour à domicile avec consignes validées",
+            "J+1 · QCM appétit, énergie, plaie et comportement",
+            "J+3 · rappel collerette / surveillance simple",
+            "J+7 · clôture ou contrôle si l’équipe le valide"
+          ]
+        };
+      }
+
+      function renderPocketProtocol(protocol) {
+        if (!protocol) return;
+        pocketProtocolName.textContent = protocol.name;
+        pocketProtocolReason.textContent = protocol.reason;
+        pocketProtocolStatus.textContent = protocol.status;
+        pocketProtocolSteps.replaceChildren();
+        protocol.steps.forEach((step) => {
+          const item = document.createElement("li");
+          item.textContent = step;
+          pocketProtocolSteps.appendChild(item);
+        });
+      }
+
+      function handlePocketSignature(note) {
+        const clean = String(note || "").trim();
+        if (!clean) return;
+        appendChatBubble(pocketSignatureThread, "vet", "Vétérinaire", clean);
+        const protocol = suggestPocketProtocol(clean);
+        renderPocketProtocol(protocol);
+        appendChatBubble(
+          pocketSignatureThread,
+          "numa",
+          "Numa",
+          "J’ai préparé « " + protocol.name + " ». Relisez le protocole patient à valider. Si ce n’est pas le bon, dites-moi “pas ça” et décrivez la nouvelle base souhaitée."
+        );
+      }
+
+      function sortedAppointments() {
+        return appointments.slice().sort((a, b) => a.time.localeCompare(b.time));
+      }
+
+      function syncClientSelect() {
+        existingSelect.replaceChildren();
+        Object.entries(clients).forEach(([key, client]) => {
+          const option = document.createElement("option");
+          option.value = key;
+          option.textContent = client.animal + " · " + client.owner;
+          existingSelect.appendChild(option);
+        });
+      }
+
+      function render() {
+        syncClientSelect();
+        todayList.replaceChildren();
+        eventLayer.replaceChildren();
+        animalList.replaceChildren();
+        metricRdv.textContent = appointments.length;
+        animalCount.textContent = Object.keys(clients).length;
+
+        sortedAppointments().forEach((appointment) => {
+          const client = clients[appointment.key];
+          if (!client) return;
+          const row = document.createElement("button");
+          row.className = "item-row";
+          row.type = "button";
+          row.innerHTML = '<span class="item-time">' + appointment.time + '</span><span><strong>' + client.animal + " · " + client.owner + '</strong><small>' + appointment.type + " · " + appointment.reason + '</small></span><span class="tag">›</span>';
+          todayList.appendChild(row);
+
+          const event = document.createElement("button");
+          event.className = "floating-event";
+          event.type = "button";
+          const parts = appointment.time.split(":").map(Number);
+          const minutes = (parts[0] * 60 + parts[1]) - 10 * 60;
+          event.style.top = Math.max(0, minutes / (11 * 60) * 100) + "%";
+          event.innerHTML = '<strong>' + appointment.time + " · " + client.animal + '</strong><br><small>' + appointment.type + '</small>';
+          eventLayer.appendChild(event);
+        });
+
+        Object.entries(clients).forEach(([key, client]) => {
+          const row = document.createElement("button");
+          row.className = "item-row";
+          row.type = "button";
+          row.innerHTML = '<span class="initials">' + initials(client.animal) + '</span><span><strong>' + client.animal + " · " + client.owner + '</strong><small>' + client.status + " · " + client.phone + '</small></span><span>›</span>';
+          animalList.appendChild(row);
+        });
+      }
+
+      function setView(name) {
+        views.forEach((view) => view.classList.toggle("active", view.id === "view-" + name));
+        navButtons.forEach((button) => button.classList.toggle("active", button.dataset.tab === name));
+        const labels = { today: "Aujourd’hui", calendar: "Calendrier", animals: "Animaux", numa: "Numa", signature: "Suivi Signature" };
+        label.textContent = labels[name] || "Strivea Vet";
+      }
+
+      function setModal(open) {
+        modal.hidden = !open;
+        if (open) setTimeout(() => existingSelect.focus(), 30);
+      }
+
+      document.querySelectorAll('input[name="client-mode"]').forEach((input) => {
+        input.addEventListener("change", () => {
+          const isNew = document.querySelector('input[name="client-mode"]:checked').value === "new";
+          existingBlock.hidden = isNew;
+          newBlock.hidden = !isNew;
+        });
+      });
+
+      navButtons.forEach((button) => button.addEventListener("click", () => {
+        if (button.id === "nav-plus") setModal(true);
+        else setView(button.dataset.tab);
+      }));
+
+      goViewButtons.forEach((button) => {
+        button.addEventListener("click", () => setView(button.dataset.goView));
+      });
+
+      openRdv.addEventListener("click", () => setModal(true));
+      navPlus.addEventListener("click", () => setModal(true));
+      closeRdv.addEventListener("click", () => setModal(false));
+      modal.addEventListener("pointerdown", (event) => {
+        if (event.target === modal) setModal(false);
+      });
+
+      document.getElementById("fill-demo").addEventListener("click", () => {
+        document.querySelector('input[name="client-mode"][value="new"]').checked = true;
+        existingBlock.hidden = true;
+        newBlock.hidden = false;
+        document.getElementById("new-animal").value = "Rio";
+        document.getElementById("new-owner").value = "Manon Petit";
+        document.getElementById("new-phone").value = "+33 6 12 34 56 78";
+        document.getElementById("rdv-time").value = "16:15";
+        document.getElementById("rdv-reason").value = "Contrôle boiterie après promenade.";
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const mode = document.querySelector('input[name="client-mode"]:checked').value;
+        let key = existingSelect.value;
+        if (mode === "new") {
+          const animal = document.getElementById("new-animal").value.trim();
+          const owner = document.getElementById("new-owner").value.trim();
+          const phone = document.getElementById("new-phone").value.trim();
+          if (!animal || !owner) return;
+          key = (animal + "-" + owner).toLowerCase().replace(/[^a-z0-9]+/g, "-");
+          clients[key] = { animal, owner, phone: phone || "à renseigner", status: "RDV planifié" };
+        }
+        appointments.push({
+          id: "a" + Date.now(),
+          key,
+          time: document.getElementById("rdv-time").value || "14:30",
+          duration: document.getElementById("rdv-duration").value,
+          type: document.getElementById("rdv-type").value,
+          reason: document.getElementById("rdv-reason").value.trim(),
+          protocol: document.getElementById("rdv-protocol").value
+        });
+        form.reset();
+        document.querySelector('input[name="client-mode"][value="existing"]').checked = true;
+        existingBlock.hidden = false;
+        newBlock.hidden = true;
+        setModal(false);
+        render();
+        setView("calendar");
+      });
+
+      portableMessageForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const message = portableMessageInput.value.trim();
+        if (!message) return;
+        appendChatBubble(portableAnimalThread, "vet", "Clinique", message);
+        portableMessageInput.value = "";
+      });
+
+      pocketSignatureForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const note = pocketSignatureInput.value.trim();
+        if (!note) return;
+        pocketSignatureInput.value = "";
+        handlePocketSignature(note);
+      });
+
+      document.querySelectorAll("[data-signature-prompt]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const prompt = button.dataset.signaturePrompt || "";
+          pocketSignatureInput.value = prompt;
+          handlePocketSignature(prompt);
+          pocketSignatureInput.value = "";
+        });
+      });
+
+      document.getElementById("pocket-validate-protocol").addEventListener("click", () => {
+        pocketProtocolStatus.textContent = "Validé";
+        appendChatBubble(pocketSignatureThread, "numa", "Numa", "Suivi validé en brouillon. Les messages WhatsApp et QCM restent simulés dans cette version portable.");
+      });
+
+      document.getElementById("pocket-edit-protocol").addEventListener("click", () => {
+        setView("signature");
+        pocketSignatureInput.focus();
+      });
+
+      calendarLine.addEventListener("pointermove", (event) => {
+        const rect = calendarLine.getBoundingClientRect();
+        const y = Math.max(0, Math.min(rect.height, event.clientY - rect.top));
+        redline.style.top = y + "px";
+        const minutes = Math.round((10 * 60 + (11 * 60) * (y / rect.height)) / 5) * 5;
+        const hour = Math.floor(minutes / 60);
+        const minute = minutes % 60;
+        redtime.textContent = String(hour).padStart(2, "0") + ":" + String(minute).padStart(2, "0");
+      });
+
+      document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.documentElement;
+        html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+      });
+
+      render();
+    })();
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a42ceb883c3183d9',t:'MTc5MDcwNTE2OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
